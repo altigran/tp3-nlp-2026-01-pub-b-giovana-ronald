@@ -1,0 +1,18 @@
+# Trilha B — Agente de Conteúdo. FIXE as versões (==) refletindo seu ambiente real (Seção 6.5).
+# Núcleo (obrigatório):
+mcp>=1.27,<2
+
+# Coleta (escolha e fixe as versões):
+# requests
+# beautifulsoup4
+# wikipedia-api
+# arxiv
+# scholarly
+
+# Indexação / vector store (escolha UMA e fixe a versão):
+# faiss-cpu
+# chromadb
+# sentence-transformers   # embeddings
+
+# Avaliação:
+# bert-score              # BERTScore das questões discursivas (Seção 4.3)

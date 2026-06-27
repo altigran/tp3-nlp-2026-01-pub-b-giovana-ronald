@@ -1,0 +1,18 @@
+EXEMPLO (substitua pela ementa OFICIAL da disciplina escolhida).
+
+A ementa real deve ser anexada como data/ementa.txt em formato textual
+(não escaneado, texto selecionável) — passo 1.5.
+
+--- exemplo ilustrativo ---
+Disciplina: Fundamentos de Hidrologia
+Área (ENADE): Engenharia Ambiental
+
+Ementa: Ciclo hidrológico. Precipitação e sua medida. Evapotranspiração.
+Bacias hidrográficas: delimitação e características físicas. Escoamento
+superficial. Tempo de concentração.
+
+Pré-requisitos: Cálculo I; Física I.
+
+Bibliografia:
+- TUCCI, C. E. M. Hidrologia: Ciência e Aplicação.
+- COLLISCHONN, W.; DORNELLES, F. Hidrologia para Engenharia e Ciências Ambientais.

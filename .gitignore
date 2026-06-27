@@ -1,0 +1,43 @@
+# === Ambientes virtuais ===
+.venv/
+venv/
+env/
+
+# === Caches ===
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# === Arquivos compactados (PROIBIDO versionar — Seção 6.4) ===
+*.zip
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+
+# === Chaves e segredos (NUNCA versionar — Seção 6.4) ===
+.env
+*.key
+secrets.json
+**/api_key*
+
+# === Conteúdo BRUTO coletado (PROIBIDO versionar — versione só metadados) — Seção 6.4 ===
+data/raw/
+builder/cache/
+*.html
+*.warc
+
+# === Índice da vector store (regenerável; versione só hash/metadados) — Seção 6.4 ===
+data/index/
+*.faiss
+chroma/
+*.sqlite3
+*.sqlite3-journal
+
+# === Enunciados completos do ENADE são PROIBIDOS — versione só a referência ===
+data/enade_enunciados/
+
+# === Sistema ===
+.DS_Store
+Thumbs.db

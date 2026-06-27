@@ -1,0 +1,25 @@
+{
+  "_comentario": "EXEMPLO de saída do parser (passo 1.6). Gere o seu como data/ementa_estruturada.json.",
+  "discipline": "Fundamentos de Hidrologia",
+  "area": "Engenharia Ambiental",
+  "topics": [
+    {
+      "topic_id": "ciclo-hidrologico",
+      "name": "Ciclo Hidrológico",
+      "subtopics": ["evaporação", "condensação", "precipitação", "escoamento"],
+      "key_concepts": ["balanço hídrico", "energia solar", "gravidade"]
+    },
+    {
+      "topic_id": "bacias-hidrograficas",
+      "name": "Bacias Hidrográficas",
+      "subtopics": ["divisores de água", "exutório", "tempo de concentração"],
+      "key_concepts": ["delimitação", "talvegue", "declividade"]
+    }
+  ],
+  "prerequisites": ["Cálculo I", "Física I"],
+  "bibliography": [
+    "TUCCI, C. E. M. Hidrologia: Ciência e Aplicação.",
+    "COLLISCHONN, W.; DORNELLES, F. Hidrologia para Engenharia e Ciências Ambientais."
+  ],
+  "extraction_errors": []
+}

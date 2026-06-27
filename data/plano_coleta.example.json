@@ -1,0 +1,19 @@
+{
+  "_comentario": "EXEMPLO de saída do planner (passo 1.7). Gere o seu como data/plano_coleta.json.",
+  "version": 1,
+  "seed": 42,
+  "topics": [
+    {
+      "topic_id": "ciclo-hidrologico",
+      "queries": ["ciclo hidrológico", "balanço hídrico bacia"],
+      "target_sources": ["wikipedia", "openstax", "scielo"],
+      "max_docs": 8
+    },
+    {
+      "topic_id": "bacias-hidrograficas",
+      "queries": ["delimitação de bacia hidrográfica", "tempo de concentração"],
+      "target_sources": ["mit_ocw", "scielo", "web"],
+      "max_docs": 8
+    }
+  ]
+}

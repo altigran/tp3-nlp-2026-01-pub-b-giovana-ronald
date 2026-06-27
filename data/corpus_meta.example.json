@@ -1,0 +1,23 @@
+{
+  "_comentario": "EXEMPLO de saída do congelador (passos 1.10/1.12). Gere o seu como data/corpus_meta.json. NÃO inclua conteúdo bruto aqui — apenas metadados e hash.",
+  "corpus_hash": "<sha256 determinístico do índice e dos metadados>",
+  "chunk_count": 42,
+  "topics_state": [
+    {
+      "topic_id": "ciclo-hidrologico",
+      "name": "Ciclo Hidrológico",
+      "coverage": 0.83,
+      "document_count": 6,
+      "avg_credibility": 0.81,
+      "discipline": "Fundamentos de Hidrologia"
+    },
+    {
+      "topic_id": "bacias-hidrograficas",
+      "name": "Bacias Hidrográficas",
+      "coverage": 0.67,
+      "document_count": 5,
+      "avg_credibility": 0.74,
+      "discipline": "Fundamentos de Hidrologia"
+    }
+  ]
+}

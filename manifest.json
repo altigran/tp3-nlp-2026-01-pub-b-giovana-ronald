@@ -1,0 +1,20 @@
+{
+  "name": "TODO-nome-do-componente",
+  "type": "conteudo",
+  "contract_version": "1.0",
+  "transport": "stdio",
+  "run": {
+    "command": "python -m mcp_content",
+    "cwd": ".",
+    "env": {
+      "_comentario": "Variáveis de ambiente necessárias para servir o corpus congelado (ex.: caminho do índice). NÃO versione segredos."
+    }
+  },
+  "content": {
+    "discipline": "TODO (disciplina de graduação da UFAM, fora do ICOMP)",
+    "area": "TODO (área com prova ENADE)",
+    "enade_editions": ["TODO"],
+    "topics": ["TODO"],
+    "corpus_hash": "TODO (preenchido pelo congelador — passo 1.10)"
+  }
+}
