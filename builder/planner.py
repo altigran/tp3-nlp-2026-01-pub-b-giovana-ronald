@@ -2,8 +2,6 @@
 
 Deriva um plano de coleta por tópico a partir da ementa estruturada. O plano é
 persistido e auditável (entra em data/plano_coleta.json).
-
-TODO(aluno): gerar consultas/fontes-alvo por tópico, com orçamento de coleta.
 """
 
 from __future__ import annotations
@@ -15,13 +13,16 @@ from typing import Any
 
 def build_plan(structured_ementa: dict[str, Any]) -> dict[str, Any]:
     """Gera o plano de coleta por tópico."""
-    # TODO(aluno): para cada tópico, definir queries, fontes candidatas e limites.
+    topicos = []
+    fontes = ["wikipedia", "web", "publico"]
+    for top in structured_ementa["topics"]:
+        queries = structured_ementa["subtopicos"] + structured_ementa["key_concepts"]
+        topicos.append({"topic_id": top["topic_id"], "queries": queries, "target_sources": fontes, "max_docs": len(queries)})
+
     return {
         "version": 1,
-        "seed": 42,  # fixar seed (Seção 7)
-        "topics": [
-            # {"topic_id": "...", "queries": [...], "target_sources": [...], "max_docs": N}
-        ],
+        "seed": 42,
+        "topics": topicos
     }
 
 

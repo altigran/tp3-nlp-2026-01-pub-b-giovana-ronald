@@ -1,13 +1,17 @@
 # Trilha B — Agente de Conteúdo. FIXE as versões (==) refletindo seu ambiente real (Seção 6.5).
 # Núcleo (obrigatório):
-mcp>=1.27,<2
+mcp==1.28.1
+
+# Parser:
+google-re2==1.1.20251105
+openai==2.44.0
 
 # Coleta (escolha e fixe as versões):
-# requests
-# beautifulsoup4
-# wikipedia-api
-# arxiv
-# scholarly
+requests==2.34.2
+beautifulsoup4==4.15.0
+wikipedia-api==0.15.0
+internetarchive==5.10.1
+ddgs==9.14.4
 
 # Indexação / vector store (escolha UMA e fixe a versão):
 # faiss-cpu

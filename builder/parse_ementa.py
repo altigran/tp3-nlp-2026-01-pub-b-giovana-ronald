@@ -6,30 +6,109 @@ menos: (i) lista de tópicos e subtópicos, (ii) conceitos-chave por tópico,
 
 Saída persistida em JSON e revisada manualmente; erros de extração devem ser
 registrados no relatório.
-
-TODO(aluno): implementar a extração real (regex/heurística/LLM auxiliar).
 """
 
 from __future__ import annotations
 
+import re2
+import os
 import json
 from pathlib import Path
 from typing import Any
+from openai import OpenAI
 
+
+class LLMAuxiliar:
+    def __init__(self):
+        self.client = OpenAI(
+            api_key=os.environ.get("API_KEY"),
+            base_url="https://integrate.api.nvidia.com/v1"
+        )
+        self.nome = "google/gemma-4-31b-it"
+
+    def respondePrompt(self, prompt):
+        try:
+            resposta = self.client.chat.completions.create(
+                model=self.nome,
+                messages=[
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.0
+            )
+            return resposta.choices[0].message.content
+        except Exception as erro:
+            print(erro)
+        return None
 
 def parse_ementa(raw_text: str) -> dict[str, Any]:
     """Converte o texto bruto da ementa em estrutura auditável."""
-    # TODO(aluno): preencher tópicos/subtópicos, conceitos, pré-requisitos, bibliografia.
+    erros = []
+
+    result = re2.search(r"Disciplina:\s*(.+)", raw_text)
+    try:
+        disciplina = str(result.group(1)).strip()
+    except Exception as erro:
+        disciplina = []
+        erros.append(f"Disciplina: {erro}")
+
+    result = re2.search(r"Área \(ENADE\):\s*(.+)", raw_text)
+    try:
+        area = str(result.group(1)).strip()
+    except Exception as erro:
+        area = []
+        erros.append(f"Área: {erro}")
+
+    options = re2.Options()
+    options.dot_nl = True
+    regex = re2.compile(r"Ementa:\s*(.+?)Pré-requisitos:", options)
+    result = re2.search(regex, raw_text)
+    try:
+        top = str(result.group(1)).strip()
+        with open("data/ementa_estruturada.example.json", 'r') as arq:
+            exemplo = json.load(arq)
+        llm = LLMAuxiliar()
+        resposta = llm.respondePrompt(f'''
+        Classifique os termos em tópicos e subtópicos. Para cada tópico, faça um JSON contendo o tópico, seus subtópicos e conceitos-chave do tópico. Retorne *apenas* uma lista de JSONs sem espaçamentos, nada de explicações ou texto adicional.
+        
+        Exemplo:
+        Entrada: "Ciclo hidrológico. Precipitação e sua medida. Evapotranspiração. Bacias hidrográficas: delimitação e características físicas. Escoamento superficial. Tempo de concentração."
+        Saída: {exemplo["topics"]}
+
+        Entrada: {top}
+        Saída:''')
+        if (resposta.startswith("```json")):
+            resposta = resposta.replace("```json", '')
+        if (resposta.endswith("```")):
+            resposta = resposta.replace("```", '')
+        print(resposta)
+        topicos = json.loads(resposta)
+    except Exception as erro:
+        topicos = []
+        erros.append(f"Tópicos: {erro}")
+
+    result = re2.search(r"Pré-requisitos:\s*([^.]+)", raw_text)
+    try:
+        preq = str(result.group(1)).strip()
+        prerequisitos = [p.strip() for p in preq.split(';') if p.strip()]
+    except Exception as erro:
+        prerequisitos = []
+        erros.append(f"Pré-requisitos: {erro}")
+
+    result = re2.search(r"Bibliografia:\s*((?:-\s*.*(?:\n|$))+)", raw_text)
+    try:
+        bib = str(result.group(1)).strip()
+        biblio = [b.lstrip("- ").strip() for b in bib.split("\n") if b.strip()]
+    except Exception as erro:
+        biblio = []
+        erros.append(f"Bibliografia: {erro}")
+
     return {
-        "discipline": "TODO",
-        "area": "TODO",
-        "topics": [
-            # {"topic_id": "...", "name": "...", "subtopics": [...],
-            #  "key_concepts": [...]}
-        ],
-        "prerequisites": [],
-        "bibliography": [],
-        "extraction_errors": [],
+        "discipline": disciplina,
+        "area": area,
+        "topics": topicos,
+        "prerequisites": prerequisitos,
+        "bibliography": biblio,
+        "extraction_errors": erros,
     }
 
 

@@ -4,14 +4,14 @@ Para cada requisito, indique **onde** foi cumprido (arquivo, função ou seção
 relatório). O preenchimento é usado como guia na correção (Seção 6.7).
 
 ## Disciplina e escopo
-- [ ] Disciplina não-computacional da UFAM, área com ENADE, ementa pública — _onde:_
-- [ ] Justificativa da escolha (material em PT, viabilidade, edição(ões) ENADE) no relatório — _onde:_
-- [ ] Ementa oficial anexada em `data/ementa.txt` (texto selecionável, não escaneado) — _onde:_
+- [x] Disciplina não-computacional da UFAM, área com ENADE, ementa pública — _onde:_ seção do relatório "Introdução"
+- [x] Justificativa da escolha (material em PT, viabilidade, edição(ões) ENADE) no relatório — _onde:_ seção do relatório "Introdução"
+- [x] Ementa oficial anexada em `data/ementa.txt` (texto selecionável, não escaneado) — _onde:_ arquivo data/ementa.txt
 
 ## Construtor de corpus (offline) — Camada 1
-- [ ] Parser de ementa (tópicos, conceitos, pré-requisitos, bibliografia) → `data/ementa_estruturada.json` — _onde:_
-- [ ] Planner com plano de coleta auditável → `data/plano_coleta.json` — _onde:_
-- [ ] Coletor com **≥3 fontes** distintas; log de execução persistido — _onde:_
+- [x] Parser de ementa (tópicos, conceitos, pré-requisitos, bibliografia) → `data/ementa_estruturada.json` — _onde:_ arquivo builder/parse_ementa.py
+- [x] Planner com plano de coleta auditável → `data/plano_coleta.json` — _onde:_ arquivo builder/planner.py
+- [ ] Coletor com **≥3 fontes** distintas; log de execução persistido — _onde:_ arquivo builder/collector.py
 - [ ] Avaliador de fontes com heurística explícita (score + justificativa) — _onde:_
 - [ ] Deduplicador — _onde:_
 - [ ] Indexador em vector store com metadados obrigatórios por chunk — _onde:_
