@@ -14,9 +14,6 @@ internetarchive==5.10.1
 ddgs==9.14.4
 
 # Indexação / vector store (escolha UMA e fixe a versão):
-# faiss-cpu
-# chromadb
-# sentence-transformers   # embeddings
+numpy==1.26.4
 
-# Avaliação:
-# bert-score              # BERTScore das questões discursivas (Seção 4.3)
+
