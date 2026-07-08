@@ -1,0 +1,11 @@
+Disciplina: Física II E
+Área (ENADE): Engenharia Elétrica
+
+Ementa: Carga e Matéria. O Campo Elétrico. A Lei de Gauss. Potencial Elétrico. Capacitores e
+Dielétricos. Corrente e Resistência Elétrica. Forças Eletromotriz. Campo Magnético.
+A Lei de Ampère. A Lei de Faraday. Laboratório.
+
+Pré-requisitos: Física I E.
+
+Bibliografia:
+- HALLIDAY, David & RESNICK, Robert. Física III. – 04 ex.

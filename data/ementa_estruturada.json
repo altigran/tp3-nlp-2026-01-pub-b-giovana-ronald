@@ -1,0 +1,69 @@
+{
+  "discipline": "Física II E",
+  "area": "Engenharia Elétrica",
+  "topics": [
+    {
+      "topic_id": "eletrostatica",
+      "name": "Eletrostática",
+      "subtopics": [
+        "Carga e Matéria",
+        "O Campo Elétrico",
+        "A Lei de Gauss",
+        "Potencial Elétrico",
+        "Capacitores e Dielétricos"
+      ],
+      "key_concepts": [
+        "carga elétrica",
+        "campo elétrico",
+        "fluxo elétrico",
+        "potencial elétrico",
+        "capacitância"
+      ]
+    },
+    {
+      "topic_id": "eletrodinamica",
+      "name": "Eletrodinâmica",
+      "subtopics": [
+        "Corrente e Resistência Elétrica",
+        "Forças Eletromotriz"
+      ],
+      "key_concepts": [
+        "lei de ohm",
+        "condutividade",
+        "tensão elétrica"
+      ]
+    },
+    {
+      "topic_id": "eletromagnetismo",
+      "name": "Eletromagnetismo",
+      "subtopics": [
+        "Campo Magnético",
+        "A Lei de Ampère",
+        "A Lei de Faraday"
+      ],
+      "key_concepts": [
+        "indução eletromagnética",
+        "fluxo magnético",
+        "força magnética"
+      ]
+    },
+    {
+      "topic_id": "pratica",
+      "name": "Prática",
+      "subtopics": [
+        "Laboratório"
+      ],
+      "key_concepts": [
+        "experimentação",
+        "medição"
+      ]
+    }
+  ],
+  "prerequisites": [
+    "Física I E"
+  ],
+  "bibliography": [
+    "HALLIDAY, David & RESNICK, Robert. Física III. – 04 ex."
+  ],
+  "extraction_errors": []
+}

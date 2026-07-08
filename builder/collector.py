@@ -14,8 +14,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from ddgs import DDGS
 from internetarchive import search_items, get_item
-import wikipediaapi
+from bs4 import BeautifulSoup
+from urllib.parse import urlsplit
 import os
+import requests
+import wikipediaapi
 
 @dataclass
 class CollectedDoc:
@@ -28,7 +31,6 @@ class CollectedDoc:
 
 def collect(plan: dict) -> list[CollectedDoc]:
     """Executa a coleta conforme o plano e devolve os documentos brutos."""
-    # TODO(aluno): implementar busca + fetch; salvar bruto em data/raw/;
     os.makedirs("data/raw", exist_ok=True)
     # registrar log de execução (data/collection_log.json).
     docs = []
@@ -44,7 +46,8 @@ def collect(plan: dict) -> list[CollectedDoc]:
                         if (pag.exists() == False):
                             pags = wiki.search(q).pages
                             pag = list(pags.values())[0]
-                        with open(f"data/raw/{topico["topic_id"]}_wikipedia.txt", 'w') as arq:
+                        nome_arq = f"data/raw/{topico["topic_id"]}_wikipedia.txt"
+                        with open(nome_arq, 'w') as arq:
                             arq.write(pag.title+'\n')
                             arq.write(pag.text)
                     case "web":
@@ -52,8 +55,28 @@ def collect(plan: dict) -> list[CollectedDoc]:
                         if (resultados):
                             for r in resultados:
                                 url = r["href"]
-                                if ("wikipedia" not in url):
-                                    # a decidir como salvar pagina
+                                if ("wikipedia" not in url) and (url.endswith(".pdf") == False):
+                                    req = requests.get(url)
+                                    if (req.status_code == 200):
+                                        soup = BeautifulSoup(req.text, "html.parser")
+                                        # tira items irrelevantes da página
+                                        for item in soup(["header", "nav", "style", "script", "footer", "noscript"]):
+                                            item.decompose()
+                                        for img in soup.find_all("img"):
+                                            src = img.get("src", "")
+                                            markdown = f" ![Fórmula]({src}) "
+                                            img.replace_with(markdown)
+                                        # caso as formulares forem em mathjax (acontece no brasilescola, por exemplo)
+                                        for mjx_container in soup.find_all("mjx-container"):
+                                            assistive_mml = mjx_container.find("mjx-assistive-mml")
+                                            if (assistive_mml):
+                                                math = assistive_mml.find("math")
+                                                mjx_container.replace_with(f" {str(math)} ")
+                                        nome_arq = f"data/raw/{topico["topic_id"]}_{urlsplit(url).netloc}.md"
+                                        with open(nome_arq, 'w') as arq:
+                                            arq.write(soup.get_text(separator='\n', strip=True))
+                                if (url.endswith(".pdf")):
+                                    nome_arq = f"data/raw/{topico["topic_id"]}_{urlsplit(url).netloc}.pdf"
                     case "publico":
                         query = f"{q} AND collection:opensource AND mediatype:texts"
                         result = search_items(query)
