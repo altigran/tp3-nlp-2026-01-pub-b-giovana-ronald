@@ -1,4 +1,4 @@
-"""Servidor MCP de conteúdo read-only (stub) — passo 1.11.
+"""Servidor MCP de conteúdo read-only — passo 1.11.
 
 Implementa as três tools do contrato da Seção 3.1 sobre o **corpus congelado**.
 Transporte stdio. Tratamento explícito de erros (índice inválido, chunk
@@ -11,20 +11,15 @@ servidor com o `check_contract` do kit:
     ( cd ../kit-compatibilidade && \\
       python -m check_contract --target "python -m mcp_content" \\
         --json "$OLDPWD/evaluation/contract/report.json" )
-
-TODO(aluno): carregar o corpus congelado (vector store + metadados) e implementar
-o ranking real. Os stubs abaixo já retornam o envelope correto.
 """
 
 from __future__ import annotations
 
-import json
-import os
 from pathlib import Path
-
-import numpy as np
 from mcp.server.fastmcp import FastMCP
-from openai import OpenAI
+from sentence_transformers import SentenceTransformer
+import json
+import numpy as np
 
 # --- Envelope do contrato (mantenha igual ao CONTRATO.md do kit) -----------
 # Códigos canônicos: MALFORMED_QUERY, INVALID_K, INVALID_FILTERS, CHUNK_NOT_FOUND.
@@ -34,9 +29,10 @@ from openai import OpenAI
 # --- Caminhos do corpus congelado ------------------------------------------
 CORPUS_CHUNKS_PATH = Path("data/corpus_chunks.json")
 CORPUS_META_PATH = Path("data/corpus_meta.json")
+CORPUS_EMBEDDINGS_PATH = Path("data/index/embeddings.npy")
 
-EMBED_MODEL = "nvidia/nv-embed-qa-4"
-EMBED_DIM = 1024
+EMBED_MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+EMBED_DIM = 384
 
 
 def ok(data: dict) -> dict:
@@ -58,21 +54,15 @@ def _load_corpus() -> tuple[list[dict], dict, np.ndarray | None]:
     if CORPUS_META_PATH.exists():
         meta = json.loads(CORPUS_META_PATH.read_text(encoding="utf-8"))
 
-    # monta matriz de embeddings (N x D) para busca vetorial eficiente
+    # carrega matriz de embeddings do ficheiro numpy (separado do JSON)
     embed_matrix: np.ndarray | None = None
-    vecs = []
-    for c in chunks:
-        emb = c.get("embedding")
-        if emb and len(emb) > 0:
-            vecs.append(emb)
-        else:
-            vecs.append([0.0] * EMBED_DIM)
-    if vecs:
-        embed_matrix = np.array(vecs, dtype=np.float32)
+    if CORPUS_EMBEDDINGS_PATH.exists():
+        embed_matrix = np.load(str(CORPUS_EMBEDDINGS_PATH)).astype(np.float32)
         # normaliza linhas para cosseno eficiente via dot product
-        norms = np.linalg.norm(embed_matrix, axis=1, keepdims=True)
-        norms[norms == 0] = 1.0
-        embed_matrix = embed_matrix / norms
+        if (embed_matrix):
+            norms = np.sqrt(np.sum(embed_matrix ** 2, axis=1, keepdims=True))
+            norms[norms == 0] = 1.0
+            embed_matrix = embed_matrix / norms
 
     return chunks, meta, embed_matrix
 
@@ -88,40 +78,19 @@ CORPUS_HASH: str = _META.get("corpus_hash", "")
 mcp = FastMCP("agente-conteudo")
 
 
-# --- Cliente de embeddings (lazy init) -------------------------------------
+# --- Modelo de embedding (lazy init) ---------------------------------------
 
-_openai_client: OpenAI | None = None
-
-
-def _get_client() -> OpenAI | None:
-    global _openai_client
-    if _openai_client is not None:
-        return _openai_client
-    api_key = os.environ.get("API_KEY")
-    if not api_key:
-        return None
-    _openai_client = OpenAI(
-        api_key=api_key,
-        base_url="https://integrate.api.nvidia.com/v1",
-    )
-    return _openai_client
+_model: SentenceTransformer | None = None
 
 
 def _embed_query(query: str) -> np.ndarray | None:
-    """Calcula embedding da query via API. Retorna None em caso de erro."""
-    client = _get_client()
-    if client is None:
-        return None
+    """Calcula embedding da query com sentence-transformers."""
+    global _model
+    if _model is None:
+        print(f"servidor: carregando modelo {EMBED_MODEL_NAME}...")
+        _model = SentenceTransformer(EMBED_MODEL_NAME)
     try:
-        resp = client.embeddings.create(
-            model=EMBED_MODEL,
-            input=[query],
-            encoding_format="float",
-        )
-        vec = np.array(resp.data[0].embedding, dtype=np.float32)
-        norm = np.linalg.norm(vec)
-        if norm > 0:
-            vec = vec / norm
+        vec = np.asarray(_model.encode([query], normalize_embeddings=True), dtype=np.float32).flatten()
         return vec
     except Exception as exc:
         print(f"aviso: erro ao calcular embedding da query: {exc}")

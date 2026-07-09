@@ -12,8 +12,7 @@ beautifulsoup4==4.15.0
 wikipedia-api==0.15.0
 internetarchive==5.10.1
 ddgs==9.14.4
+pymupdf==1.28.0
 
 # Indexação / vector store (escolha UMA e fixe a versão):
-numpy==1.26.4
-
-
+sentence-transformers==5.6.0

@@ -1,4 +1,4 @@
-"""Parser de ementa (stub) — passo 1.6.
+"""Parser de ementa — passo 1.6.
 
 Produz representação estruturada da ementa a partir do texto bruto, com ao
 menos: (i) lista de tópicos e subtópicos, (ii) conceitos-chave por tópico,

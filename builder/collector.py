@@ -1,4 +1,4 @@
-"""Coletor (stub) — passo 1.8.
+"""Coletor — passo 1.8.
 
 Executa buscas e fetch de páginas conforme o plano. Use **ao menos três** fontes
 (web search aberto, Wikipedia, arXiv, Google Scholar, OpenStax, MIT OpenCourseWare,
@@ -8,24 +8,22 @@ O conteúdo bruto coletado **NÃO é versionado** (Seção 6.4) — fica em data
 (ignorado). Apenas metadados/proveniência entram no repositório.
 
 O log de execução (consultas, URLs visitadas, tempo) deve ser persistido.
-
-TODO(aluno): respeitar robots.txt, rate limits e termos de uso (Seção 8).
 """
 
 from __future__ import annotations
 
-import hashlib
-import json
-import os
-import time
-from dataclasses import dataclass, asdict
+from bs4 import BeautifulSoup
+from dataclasses import dataclass
+from ddgs import DDGS
+from internetarchive import search_items, get_item
 from pathlib import Path
 from urllib.parse import urlsplit
-
+import hashlib
+import json
+import pymupdf
 import requests
+import time
 import wikipediaapi
-from bs4 import BeautifulSoup
-from ddgs import DDGS
 
 USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64; rv:152.0) Gecko/20100101 Firefox/152.0"
 HEADERS = {"User-Agent": USER_AGENT}
@@ -89,7 +87,7 @@ def _collect_wikipedia(topic_id: str, query: str, docs: list[CollectedDoc], log_
 
 def _collect_web(topic_id: str, query: str, docs: list[CollectedDoc], log_entries: list[dict]) -> None:
     try:
-        resultados = DDGS().text(query=query, max_results=MAX_WEB_RESULTS, backend="duckduckgo")
+        resultados = DDGS().text(query=query, max_results=MAX_WEB_RESULTS, backend="auto")
     except Exception as exc:
         log_entries.append({"source": "web", "query": query, "status": "ddg_error", "detail": str(exc)})
         return
@@ -102,9 +100,10 @@ def _collect_web(topic_id: str, query: str, docs: list[CollectedDoc], log_entrie
         url: str = r.get("href", "")
         if not url:
             continue
-        # ignora wikipedia (já coletada) e PDFs
-        if "wikipedia" in url or url.lower().endswith(".pdf"):
+        # ignora wikipedia (já coletada)
+        if "wikipedia" in url:
             continue
+
         try:
             resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
             if resp.status_code != 200:
@@ -114,51 +113,67 @@ def _collect_web(topic_id: str, query: str, docs: list[CollectedDoc], log_entrie
             log_entries.append({"source": "web", "url": url, "status": "fetch_error", "detail": str(exc)})
             continue
 
-        soup = BeautifulSoup(resp.text, "html.parser")
-        # tira itens irrelevantes da página
-        for tag in soup(["header", "nav", "style", "script", "footer", "noscript"]):
-            tag.decompose()
-        for img in soup.find_all("img"):
-            src = img.get("src", "")
-            markdown = f" ![Fórmula]({src}) "
-            img.replace_with(markdown)
-        # caso as fórmulas forem em mathjax (acontece no brasilescola, por exemplo)
-        for mjx_container in soup.find_all("mjx-container"):
-            assistive_mml = mjx_container.find("mjx-assistive-mml")
-            if assistive_mml:
-                math = assistive_mml.find("math")
-                mjx_container.replace_with(f" {str(math)} ")
-
-        text = soup.get_text(separator="\n", strip=True)
-        if len(text) < 200:
-            # página sem conteúdo útil
-            continue
-
-        netloc = urlsplit(url).netloc
-        nome_arq = _safe_filename(topic_id, "web", f"{netloc}_{_sha256(url)[:8]}.txt")
-        nome_arq.write_text(text, encoding="utf-8")
-        raw_hash = _sha256(text)
-
-        docs.append(
-            CollectedDoc(
-                source_url=url,
-                topic_ids=[topic_id],
-                raw_path=str(nome_arq),
-                fetched_at=_iso_now(),
-                source_kind="web",
-                raw_content_hash=raw_hash,
+        if url.lower().endswith(".pdf"):
+            netloc = urlsplit(url).netloc
+            doc = pymupdf.open(stream=resp.content, filetype="pdf")
+            text = "".join(str(page.get_text() or "") for page in doc)
+            doc.close()
+            if len(text) < 200:
+                continue
+            nome_arq = _safe_filename(topic_id, "web", f"{netloc}_{_sha256(url)[:8]}.txt")
+            nome_arq.write_text(text, encoding="utf-8")
+            raw_hash = _sha256(text)
+            docs.append(
+                CollectedDoc(
+                    source_url=url,
+                    topic_ids=[topic_id],
+                    raw_path=str(nome_arq),
+                    fetched_at=_iso_now(),
+                    source_kind="web",
+                    raw_content_hash=raw_hash,
+                )
             )
-        )
-        log_entries.append({"source": "web", "query": query, "url": url, "status": "ok"})
+            log_entries.append({"source": "web", "query": query, "url": url, "status": "ok"})
+        else:
+            soup = BeautifulSoup(resp.text, "html.parser")
+            # tira itens irrelevantes da página
+            for tag in soup(["header", "nav", "style", "script", "footer", "noscript"]):
+                tag.decompose()
+            for img in soup.find_all("img"):
+                src = img.get("src", "")
+                markdown = f" ![Fórmula]({src}) "
+                img.replace_with(markdown)
+            # caso as fórmulas forem em mathjax (acontece no brasilescola, por exemplo)
+            for mjx_container in soup.find_all("mjx-container"):
+                assistive_mml = mjx_container.find("mjx-assistive-mml")
+                if assistive_mml:
+                    math = assistive_mml.find("math")
+                    mjx_container.replace_with(f" {str(math)} ")
+
+            text = soup.get_text(separator="\n", strip=True)
+            if len(text) < 200:
+                # página sem conteúdo útil
+                continue
+
+            netloc = urlsplit(url).netloc
+            nome_arq = _safe_filename(topic_id, "web", f"{netloc}_{_sha256(url)[:8]}.md")
+            nome_arq.write_text(text, encoding="utf-8")
+            raw_hash = _sha256(text)
+
+            docs.append(
+                CollectedDoc(
+                    source_url=url,
+                    topic_ids=[topic_id],
+                    raw_path=str(nome_arq),
+                    fetched_at=_iso_now(),
+                    source_kind="web",
+                    raw_content_hash=raw_hash,
+                )
+            )
+            log_entries.append({"source": "web", "query": query, "url": url, "status": "ok"})
 
 
 def _collect_publico(topic_id: str, query: str, docs: list[CollectedDoc], log_entries: list[dict]) -> None:
-    try:
-        from internetarchive import search_items, get_item
-    except ImportError:
-        log_entries.append({"source": "publico", "query": query, "status": "import_error"})
-        return
-
     ia_query = f"{query} AND collection:opensource AND mediatype:texts AND language:portuguese"
     try:
         results = list(search_items(ia_query, fields=["identifier", "title", "subject"]))
@@ -174,18 +189,30 @@ def _collect_publico(topic_id: str, query: str, docs: list[CollectedDoc], log_en
             continue
         try:
             item = get_item(item_id)
-            # pega metadados do item ao invés de baixar PDF (economia de disco)
-            meta = item.metadata or {}
-            titulo = str(meta.get("title", item_id))
-            descricao = str(meta.get("description", ""))
-            assunto = str(meta.get("subject", ""))
-            text = f"Titulo: {titulo}\nAssunto: {assunto}\nDescricao: {descricao}"
-            if len(text) < 50:
+            # tenta PDF; se não houver, baixa o primeiro TXT
+            alvo = next((f for f in item.files if f.get("format") == "PDF"), None)
+            if not alvo:
+                alvo = next((f for f in item.files if f.get("format") == "Text"), None)
+            if not alvo:
+                log_entries.append({"source": "publico", "item_id": item_id, "status": "sem arquivo legível"})
+                continue
+            nome_original = alvo["name"]
+            item.download(files=[nome_original], destdir=str(DATA_RAW))
+            arq_baixado = DATA_RAW / nome_original
+            url = f"https://archive.org/details/{item_id}"
+            if nome_original.lower().endswith(".pdf"):
+                doc = pymupdf.open(str(arq_baixado))
+                text = "".join(str(page.get_text() or "") for page in doc)
+                doc.close()
+                arq_baixado.unlink()  # remove o PDF original
+            else:
+                text = arq_baixado.read_text(encoding="utf-8", errors="ignore")
+                arq_baixado.unlink()
+            if len(text) < 200:
                 continue
             nome_arq = _safe_filename(topic_id, "publico", f"{item_id[:40]}.txt")
             nome_arq.write_text(text, encoding="utf-8")
             raw_hash = _sha256(text)
-            url = f"https://archive.org/details/{item_id}"
             docs.append(
                 CollectedDoc(
                     source_url=url,
@@ -235,4 +262,6 @@ def collect(plan: dict) -> list[CollectedDoc]:
 
 
 if __name__ == "__main__":
-    raise SystemExit("Stub: implemente collect() e chame a partir de builder.run.")
+    plan = json.loads(Path("data/plano_coleta.json").read_text(encoding="utf-8"))
+    docs = collect(plan)
+    print(f"{len(docs)} documentos coletados com sucesso.")

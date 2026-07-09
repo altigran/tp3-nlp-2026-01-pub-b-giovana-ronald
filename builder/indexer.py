@@ -1,4 +1,4 @@
-"""Indexador (stub) — passo 1.10.
+"""Indexador — passo 1.10.
 
 Indexa o material aprovado em uma **vector store**, anexando a CADA chunk os
 metadados obrigatórios do contrato (Seção 3.1):
@@ -8,34 +8,26 @@ metadados obrigatórios do contrato (Seção 3.1):
 
 O índice da vector store **não é versionado** (Seção 6.4: regenerável); apenas
 os metadados por chunk e o hash entram no repositório.
-
-TODO(aluno): escolher a vector store (ex.: FAISS, Chroma) e o modelo de embedding;
-documentar tamanho de chunk e k de recuperação no relatório.
 """
 
 from __future__ import annotations
 
 import hashlib
-import json
-import os
-import time
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
-
 import numpy as np
-from openai import OpenAI
+from sentence_transformers import SentenceTransformer
 
-# Vector store escolhida: JSON + numpy (cosine similarity em memória).
-# Modelo de embedding: nvidia/nv-embed-qa-4 via API NVIDIA (openai-compat).
+# Vector store: JSON + cosine similarity sobre embeddings.
+# Modelo de embedding: sentence-transformers multi-língua (384 dims).
 # Tamanho de chunk: 200 palavras com sobreposição de 40 palavras.
 # k de recuperação padrão: 5.
 
 CHUNK_SIZE = 200       # palavras por chunk
 CHUNK_OVERLAP = 40     # palavras de sobreposição entre chunks
-EMBED_MODEL = "nvidia/nv-embed-qa-4"
-EMBED_DIM = 1024
-CORPUS_CHUNKS_PATH = Path("data/corpus_chunks.json")
+EMBED_MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+EMBED_DIM = 384
+INDICES_PATH = Path("data/index/embeddings.npy")
 
 
 @dataclass
@@ -49,7 +41,7 @@ class Chunk:
     raw_content_hash: str
     discipline: str
     corpus_hash: str = ""   # preenchido no congelamento (freeze)
-    embedding: list[float] | None = None  # vetor de embedding
+    embedding: list[float] | None = None  # vetor de embedding (384 dims)
 
 
 def _sha256(text: str) -> str:
@@ -72,38 +64,10 @@ def _chunk_text(text: str, size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP)
     return chunks
 
 
-def _get_embeddings(texts: list[str], client: OpenAI) -> list[list[float]]:
-    """Calcula embeddings em lotes de até 32 textos."""
-    BATCH = 32
-    all_vecs: list[list[float]] = []
-    for i in range(0, len(texts), BATCH):
-        batch = texts[i : i + BATCH]
-        try:
-            resp = client.embeddings.create(
-                model=EMBED_MODEL,
-                input=batch,
-                encoding_format="float",
-            )
-            all_vecs.extend([item.embedding for item in resp.data])
-        except Exception as exc:
-            print(f"aviso: erro ao calcular embedding para batch {i//BATCH}: {exc}")
-            # preenche com zeros para não quebrar o pipeline
-            all_vecs.extend([[0.0] * EMBED_DIM for _ in batch])
-        time.sleep(0.2)  # respeita rate limit da API
-    return all_vecs
-
-
 def build_index(evaluated_docs: list, discipline: str = "") -> list[Chunk]:
     """Fragmenta em chunks, calcula embeddings e popula a vector store."""
-    # chunking + embeddings + upsert na vector store + metadados.
-    api_key = os.environ.get("API_KEY")
-    if not api_key:
-        raise EnvironmentError("Variavel de ambiente API_KEY nao definida.")
-
-    client = OpenAI(
-        api_key=api_key,
-        base_url="https://integrate.api.nvidia.com/v1",
-    )
+    print(f"indexador: carregando modelo {EMBED_MODEL_NAME}...")
+    model = SentenceTransformer(EMBED_MODEL_NAME)
 
     chunks: list[Chunk] = []
     textos_para_embed: list[str] = []
@@ -149,18 +113,18 @@ def build_index(evaluated_docs: list, discipline: str = "") -> list[Chunk]:
             textos_para_embed.append(parte)
 
     print(f"indexador: {len(chunks)} chunks gerados, calculando embeddings...")
-    embeddings = _get_embeddings(textos_para_embed, client)
+    embeddings = model.encode(textos_para_embed, show_progress_bar=True).tolist()
     for chunk, emb in zip(chunks, embeddings):
         chunk.embedding = emb
 
     return chunks
 
 
-def save_chunks(chunks: list[Chunk]) -> None:
-    """Persiste os chunks (com embeddings) em data/corpus_chunks.json."""
-    payload = [asdict(c) for c in chunks]
-    CORPUS_CHUNKS_PATH.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-    print(f"indexador: {len(chunks)} chunks salvos em {CORPUS_CHUNKS_PATH}")
+def save_embeddings(chunks: list[Chunk]) -> None:
+    """Persiste os embeddings em data/index/ (não versionado)."""
+    embs = [c.embedding for c in chunks if c.embedding is not None]
+    if (embs == []):
+        return
+    INDICES_PATH.parent.mkdir(parents=True, exist_ok=True)
+    np.save(str(INDICES_PATH), np.array(embs, dtype=np.float32))
+    print(f"indexador: {len(embs)} embeddings salvos em {INDICES_PATH}")

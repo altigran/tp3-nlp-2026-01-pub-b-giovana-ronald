@@ -2,8 +2,6 @@
 
 Orquestra parser -> planner -> coletor -> avaliador -> dedup -> indexador ->
 congelador. **Não usa MCP.** Cada etapa persiste sua saída para auditoria.
-
-TODO(aluno): conectar as etapas reais. O esqueleto abaixo mostra a ordem.
 """
 
 from __future__ import annotations
@@ -19,7 +17,7 @@ def run() -> None:
     from builder.collector import collect
     from builder.evaluator import evaluate
     from builder.dedup import deduplicate
-    from builder.indexer import build_index, save_chunks
+    from builder.indexer import build_index, save_embeddings
     from builder.freeze import freeze
 
     # 1) parse_ementa  -> data/ementa_estruturada.json
@@ -67,7 +65,7 @@ def run() -> None:
 
     # 5) deduplicate
     print("=== 5/7 dedup ===")
-    docs_unicos = deduplicate(docs)
+    docs_unicos = deduplicate([doc for doc in docs if doc.evaluator_score >= 0.75])
     if not docs_unicos:
         print("AVISO: todos os documentos foram removidos pelo dedup.")
         return
@@ -78,7 +76,7 @@ def run() -> None:
     if not chunks:
         print("AVISO: nenhum chunk gerado. Verifique os documentos coletados.")
         return
-    save_chunks(chunks)
+    save_embeddings(chunks)
 
     # 7) freeze        -> data/corpus_meta.json (corpus_hash, memória da disciplina)
     print("=== 7/7 freeze ===")
@@ -93,7 +91,7 @@ def run() -> None:
         manifest["run"]["command"] = "python3 -m mcp_content"
         manifest["content"]["discipline"] = discipline
         manifest["content"]["area"] = area
-        manifest["content"]["enade_editions"] = ["2019", "2021", "2023"]
+        manifest["content"]["enade_editions"] = ["2017", "2019", "2023"]
         manifest["content"]["topics"] = [t["topic_id"] for t in ementa.get("topics", [])]
         manifest["content"]["corpus_hash"] = corpus_hash
         # remove campo de comentário do env se existir

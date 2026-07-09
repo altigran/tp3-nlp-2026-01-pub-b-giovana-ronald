@@ -1,10 +1,8 @@
-"""Deduplicador (stub).
+"""Deduplicador.
 
 Remove documentos/trechos redundantes antes da indexação (ex.: near-duplicates
 por hash de shingles / similaridade de embeddings). Reduz inflação artificial
 de cobertura e diversidade.
-
-TODO(aluno): escolher e documentar a estratégia de deduplicação.
 """
 
 from __future__ import annotations

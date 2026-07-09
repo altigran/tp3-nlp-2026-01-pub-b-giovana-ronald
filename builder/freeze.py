@@ -1,4 +1,4 @@
-"""Congelador (stub) — passo 1.10/1.12.
+"""Congelador — passo 1.10/1.12.
 
 Encerra o pipeline: calcula o `corpus_hash` (hash determinístico do índice e dos
 metadados), preenche esse hash em todos os chunks e persiste o estado do corpus
@@ -16,8 +16,8 @@ import json
 from pathlib import Path
 from collections import defaultdict
 
-CORPUS_META_PATH = Path("data/corpus_meta.json")
 CORPUS_CHUNKS_PATH = Path("data/corpus_chunks.json")
+CORPUS_META_PATH = Path("data/corpus_meta.json")
 
 
 def compute_corpus_hash(chunk_payloads: list[dict]) -> str:
@@ -81,9 +81,10 @@ def freeze(chunk_payloads: list[dict], discipline: str = "", area: str = "") -> 
         encoding="utf-8",
     )
 
-    # Persistir também os metadados por chunk (sem o conteúdo bruto).
+    # Persistir metadados por chunk (sem embedding — fica no indexer).
+    meta_only = [{k: v for k, v in c.items() if k != "embedding"} for c in chunk_payloads]
     CORPUS_CHUNKS_PATH.write_text(
-        json.dumps(chunk_payloads, ensure_ascii=False, indent=2),
+        json.dumps(meta_only, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
