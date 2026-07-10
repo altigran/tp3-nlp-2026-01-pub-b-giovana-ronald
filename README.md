@@ -59,6 +59,9 @@ pip install -r requirements.txt
 
 ```bash
 # 1.5  anexar a ementa OFICIAL em data/ementa.txt (texto selecionável)
+# 7 importar chave de API para o LLM auxliar no parser:
+export OPENAI_API_KEY=sua chave aqui
+
 # 1.6–1.10  rodar o pipeline offline:
 python -m builder            # parser -> planner -> coletor -> avaliador -> dedup -> indexador -> congelador
 
