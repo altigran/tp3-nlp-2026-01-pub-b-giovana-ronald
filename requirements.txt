@@ -16,3 +16,6 @@ pymupdf==1.28.0
 
 # Indexação / vector store (escolha UMA e fixe a versão):
 sentence-transformers==5.6.0
+
+# Ferramenta bônus
+sympy==1.14.0

@@ -241,6 +241,20 @@ def get_chunk(chunk_id: str) -> dict:
     return ok({"chunk": _chunk_payload(c)})
 
 
+@mcp.tool()
+def solve_physics_formula(expression: str) -> dict:
+    """Ferramenta bônus: Resolve ou simplifica expressões matemáticas e equações simbólicas usando SymPy."""
+    if not isinstance(expression, str) or not expression.strip():
+        return err("MALFORMED_QUERY", "parâmetro 'expression' ausente ou vazio")
+    try:
+        import sympy
+        # Avalia a expressão de forma segura
+        parsed = sympy.sympify(expression)
+        result = parsed.evalf() if parsed.is_number else parsed
+        return ok({"expression": expression, "result": str(result)})
+    except Exception as e:
+        return err("INVALID_EXPRESSION", f"Falha ao avaliar expressão matemática: {e}")
+
 def main() -> None:
     mcp.run()
 
