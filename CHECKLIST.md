@@ -27,7 +27,7 @@ relatório). O preenchimento é usado como guia na correção (Seção 6.7).
 
 ## Validação da Fase 1
 - [ ] **Camada 1 — Qualidade da Construção** → `evaluation/construction/` (cobertura, diversidade, credibilidade, volume) — _onde:_
-- [ ] Conexão do `tutor_mock` e sessão registrada → `evaluation/mock_integration/` — _onde:_
+- [x] Conexão do `tutor_mock` e sessão registrada → `evaluation/mock_integration/` — _onde:_ arquivo evaluation/mock_integration/validation.log
 
 ## Fase 2 — interoperabilidade
 - [ ] Servidor disponibilizado aos **2 tutores** sorteados; suas suítes aplicadas — _onde:_
@@ -44,7 +44,7 @@ relatório). O preenchimento é usado como guia na correção (Seção 6.7).
 - [x] Enunciados completos do ENADE NÃO versionados (apenas referência + link) — _onde:_ arquivo .gitignore
 
 ## Entregáveis gerais
-- [ ] `README.md` com setup, execução e reprodução — _onde:_
+- [x] `README.md` com setup, execução e reprodução — _onde:_ arquivo README.md
 - [x] `requirements.txt` com versões fixadas — _onde:_ arquivo requirements.txt
 - [ ] `RELATORIO.pdf` na raiz (máx. 8 páginas, formato SBC, texto selecionável) — _onde:_
 

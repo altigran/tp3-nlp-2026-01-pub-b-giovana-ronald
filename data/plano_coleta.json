@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "seed": 42,
+  "discipline": "Física II E",
+  "area": "Engenharia Elétrica",
+  "topics": [
+    {
+      "topic_id": "eletrostatica",
+      "name": "Eletrostática",
+      "queries": [
+        "Eletrostática",
+        "Carga e Matéria",
+        "O Campo Elétrico",
+        "A Lei de Gauss",
+        "Potencial Elétrico",
+        "carga elétrica",
+        "campo elétrico",
+        "fluxo elétrico",
+        "potencial"
+      ],
+      "target_sources": [
+        "wikipedia",
+        "web",
+        "publico"
+      ],
+      "max_docs": 27
+    },
+    {
+      "topic_id": "capacitancia",
+      "name": "Capacitância",
+      "queries": [
+        "Capacitância",
+        "Capacitores e Dielétricos",
+        "capacitância",
+        "dielétricos",
+        "armazenamento de energia"
+      ],
+      "target_sources": [
+        "wikipedia",
+        "web",
+        "publico"
+      ],
+      "max_docs": 15
+    },
+    {
+      "topic_id": "circuitos-eletricos",
+      "name": "Circuitos Elétricos",
+      "queries": [
+        "Circuitos Elétricos",
+        "Corrente e Resistência Elétrica",
+        "Forças Eletromotriz",
+        "lei de ohm",
+        "fem",
+        "resistividade"
+      ],
+      "target_sources": [
+        "wikipedia",
+        "web",
+        "publico"
+      ],
+      "max_docs": 18
+    },
+    {
+      "topic_id": "eletromagnetismo",
+      "name": "Eletromagnetismo",
+      "queries": [
+        "Eletromagnetismo",
+        "Campo Magnético",
+        "A Lei de Ampère",
+        "A Lei de Faraday",
+        "indução eletromagnética",
+        "fluxo magnético",
+        "força de lorentz"
+      ],
+      "target_sources": [
+        "wikipedia",
+        "web",
+        "publico"
+      ],
+      "max_docs": 21
+    },
+    {
+      "topic_id": "pratica",
+      "name": "Prática",
+      "queries": [
+        "Prática",
+        "Laboratório",
+        "experimentação",
+        "medições"
+      ],
+      "target_sources": [
+        "wikipedia",
+        "web",
+        "publico"
+      ],
+      "max_docs": 12
+    }
+  ]
+}

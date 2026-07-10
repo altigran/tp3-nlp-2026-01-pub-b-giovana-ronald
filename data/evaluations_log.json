@@ -1,0 +1,487 @@
+[
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Eletrost%C3%A1tica",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (27691 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.todamateria.com.br/eletrostatica/",
+    "score": 0.825,
+    "rationale": "domínio educativo (todamateria.com.br): 0.5; conteúdo substantivo (7279 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://brasilescola.uol.com.br/fisica/principio-eletrostatica.htm",
+    "score": 0.825,
+    "rationale": "domínio educativo (brasilescola.uol.com.br): 0.5; conteúdo substantivo (19087 chars): 1.0; termos de spam encontrados ['clique aqui']: -0.05"
+  },
+  {
+    "source_url": "https://militares.estrategia.com/portal/materias-e-dicas/fisica/propriedades-da-eletrostatica-tudo-o-que-voce-precisa-saber/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (14893 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.fundacionendesa.org/es/educacion/endesa-educa/recursos/materia-carga-electrica",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (13268 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.preparaenem.com/fisica/antimateria.htm",
+    "score": 0.4917,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo moderado (2471 chars): 0.5; termos de spam encontrados ['publicidade']: -0.05"
+  },
+  {
+    "source_url": "https://www.youtube.com/watch?v=HT8Mkwqzu2E",
+    "score": 0.325,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo curto (248 chars): 0.0; termos de spam encontrados ['publicidade']: -0.05"
+  },
+  {
+    "source_url": "https://uspdigital.usp.br/jupiterweb/jupDisciplina?sgldis=SEL0410",
+    "score": 1.0,
+    "rationale": "domínio acadêmico (.usp.br): 1.0; conteúdo substantivo (6200 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://brasilescola.uol.com.br/fisica/campo-eletrico.htm",
+    "score": 0.825,
+    "rationale": "domínio educativo (brasilescola.uol.com.br): 0.5; conteúdo substantivo (16022 chars): 1.0; termos de spam encontrados ['clique aqui']: -0.05"
+  },
+  {
+    "source_url": "https://www.todamateria.com.br/campo-eletrico/",
+    "score": 0.825,
+    "rationale": "domínio educativo (todamateria.com.br): 0.5; conteúdo substantivo (21224 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://mundoeducacao.uol.com.br/fisica/campo-eletrico.htm",
+    "score": 0.8167,
+    "rationale": "domínio educativo (mundoeducacao.uol.com.br): 0.5; conteúdo substantivo (7217 chars): 1.0; termos de spam encontrados ['clique aqui', 'publicidade']: -0.10"
+  },
+  {
+    "source_url": "https://www.ck12.org/flexi/pt-br/fisica/tensao/o-que-e-um-campo-eletrico/",
+    "score": 0.3333,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo curto (1019 chars): 0.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://mundoeducacao.uol.com.br/fisica/lei-gauss.htm",
+    "score": 0.6583,
+    "rationale": "domínio educativo (mundoeducacao.uol.com.br): 0.5; conteúdo moderado (4299 chars): 0.5; termos de spam encontrados ['publicidade']: -0.05"
+  },
+  {
+    "source_url": "https://sites.ifi.unicamp.br/f328/files/2013/08/Aula-03-F328-2S-2013.pdf",
+    "score": 1.0,
+    "rationale": "domínio acadêmico (.unicamp.br): 1.0; conteúdo substantivo (5829 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.todoestudo.com.br/fisica/lei-de-gauss",
+    "score": 0.6583,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (8355 chars): 1.0; termos de spam encontrados ['publicidade']: -0.05"
+  },
+  {
+    "source_url": "https://www.respondeai.com.br/conteudo/fisica/eletricidade/introducao-a-lei-de-gauss/327",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (16145 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://br.pinterest.com/ideas/potencial-elétrico/957041444795/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (9022 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://efisica2.if.usp.br/pluginfile.php/7628/mod_resource/content/2/7-+O+Potencial+elétrico.pdf",
+    "score": 0.8333,
+    "rationale": "domínio acadêmico (.usp.br): 1.0; conteúdo moderado (4352 chars): 0.5; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Carga_el%C3%A9trica",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (21924 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.todamateria.com.br/carga-eletrica/",
+    "score": 0.825,
+    "rationale": "domínio educativo (todamateria.com.br): 0.5; conteúdo substantivo (5544 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://brasilescola.uol.com.br/fisica/carga-eletrica.htm",
+    "score": 0.8333,
+    "rationale": "domínio educativo (brasilescola.uol.com.br): 0.5; conteúdo substantivo (14887 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://tecnogera.com.br/blog/carga-eletrica-o-que-e-e-quais-os-diferentes-tipos/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (13160 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Campo_el%C3%A9trico",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (30608 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.todamateria.com.br/campo-eletrico/",
+    "score": 0.825,
+    "rationale": "domínio educativo (todamateria.com.br): 0.5; conteúdo substantivo (21224 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://brasilescola.uol.com.br/fisica/campo-eletrico.htm",
+    "score": 0.825,
+    "rationale": "domínio educativo (brasilescola.uol.com.br): 0.5; conteúdo substantivo (16022 chars): 1.0; termos de spam encontrados ['clique aqui']: -0.05"
+  },
+  {
+    "source_url": "https://modern-physics.org/campo-eletrico-explicado-fundamentos-efeitos-e-aplicacoes/",
+    "score": 0.5,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo moderado (4739 chars): 0.5; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Fluxo_el%C3%A9trico",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (6880 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Capacit%C3%A2ncia",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (19961 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://capacitanciaecateg.blogspot.com/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (70738 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.fabiobmed.com.br/capacitancia-impedancia-e-atenuacao-na-eletricidade/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (5469 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.newtoncbraga.com.br/matematica-na-eletronica/1975-m097.html",
+    "score": 0.5,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo moderado (2825 chars): 0.5; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://resources.altium.com/pt/p/guide-capacitor-dielectrics-and-ceramics",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (28179 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://query.libretexts.org/Idioma_Portugues/Fisica_Universitaria_(OpenStax)/19:_Potencial_eletrico_e_campo_eletrico/19.05:_Capacitores_e_dielétricos",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (23650 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://mundoeducacao.uol.com.br/fisica/dieletricos.htm",
+    "score": 0.825,
+    "rationale": "domínio educativo (mundoeducacao.uol.com.br): 0.5; conteúdo substantivo (9284 chars): 1.0; termos de spam encontrados ['publicidade']: -0.05"
+  },
+  {
+    "source_url": "https://engenheirodemateriais.com.br/2015/11/04/materiais-dieletricos/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (7513 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Capacit%C3%A2ncia",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (19961 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.fluke.com/pt-pt/saber-mais/blog/aplicacoes-eletricas/o-que-e-a-capacitancia",
+    "score": 0.4917,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo moderado (4174 chars): 0.5; termos de spam encontrados ['newsletter']: -0.05"
+  },
+  {
+    "source_url": "https://sites.ifi.unicamp.br/f328/files/2014/09/Aula-05-F328-1S-2014.pdf",
+    "score": 1.0,
+    "rationale": "domínio acadêmico (.unicamp.br): 1.0; conteúdo substantivo (8856 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://mundoeducacao.uol.com.br/fisica/dieletricos.htm",
+    "score": 0.825,
+    "rationale": "domínio educativo (mundoeducacao.uol.com.br): 0.5; conteúdo substantivo (9284 chars): 1.0; termos de spam encontrados ['publicidade']: -0.05"
+  },
+  {
+    "source_url": "https://www.electricity-magnetism.org/pt-br/dieletricos-como-funciona-tipos-e-aplicacao/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (5790 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Armazenamento_de_energia",
+    "score": 0.6667,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo moderado (3326 chars): 0.5; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.iberdrola.com/sustentabilidade/armazenamento-eficiente-de-energia",
+    "score": 0.6417,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (13416 chars): 1.0; termos de spam encontrados ['assine', 'política de privacidade', 'newsletter']: -0.15"
+  },
+  {
+    "source_url": "https://cepel.br/2025/04/29/desafios-solucoes-e-tecnologias-no-armazenamento-de-energia-para-o-setor-eletrico/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (33376 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://bydenergia.com/sistema-de-armazenagem-de-energia-ess/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (18228 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.ibm.com/br-pt/think/topics/energy-storage",
+    "score": 0.6583,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (17404 chars): 1.0; termos de spam encontrados ['assine']: -0.05"
+  },
+  {
+    "source_url": "https://brasilescola.uol.com.br/fisica/circuitos-eletricos.htm",
+    "score": 0.8333,
+    "rationale": "domínio educativo (brasilescola.uol.com.br): 0.5; conteúdo substantivo (27519 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.mundodaeletrica.com.br/tipos-de-circuitos-eletricos-quais-sao/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (11846 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://engenharia360.com/circuitos-eletricos-o-que-sao-e-para-que-servem/",
+    "score": 0.6333,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (11921 chars): 1.0; termos de spam encontrados ['assine', 'publicidade', 'política de privacidade']: -0.20"
+  },
+  {
+    "source_url": "https://www.mundodaeletrica.com.br/o-que-e-um-circuito-eletrico/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (9095 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://embarcados.com.br/lei-de-ohm/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (12819 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://loja.br.abb.com/blog/post/tensao-corrente-e-resistencia-eletrica",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (9448 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.mundodaeletrica.com/corrente-tensao-resistencia-eletrica-qual-relacao/",
+    "score": 0.6583,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (6801 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://www.todamateria.com.br/resistencia-eletrica/",
+    "score": 0.825,
+    "rationale": "domínio educativo (todamateria.com.br): 0.5; conteúdo substantivo (20721 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://www.slideshare.net/slideshow/tenso-corrente-e-resistencia-eltricapptx/259759402",
+    "score": 0.1667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo curto (238 chars): 0.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://brasilescola.uol.com.br/o-que-e/fisica/o-que-e-forca-eletromotriz.htm",
+    "score": 0.8333,
+    "rationale": "domínio educativo (brasilescola.uol.com.br): 0.5; conteúdo substantivo (9006 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://querobolsa.com.br/enem/fisica/forca-eletromotriz",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (8044 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://mundoeducacao.uol.com.br/fisica/forca-eletromotriz-forca-contraeletromotriz.htm",
+    "score": 0.825,
+    "rationale": "domínio educativo (mundoeducacao.uol.com.br): 0.5; conteúdo substantivo (7881 chars): 1.0; termos de spam encontrados ['publicidade']: -0.05"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Lei_de_Ohm",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (34580 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://brasilescola.uol.com.br/fisica/a-lei-ohm.htm",
+    "score": 0.825,
+    "rationale": "domínio educativo (brasilescola.uol.com.br): 0.5; conteúdo substantivo (15502 chars): 1.0; termos de spam encontrados ['clique aqui']: -0.05"
+  },
+  {
+    "source_url": "https://www.todamateria.com.br/leis-de-ohm/",
+    "score": 0.825,
+    "rationale": "domínio educativo (todamateria.com.br): 0.5; conteúdo substantivo (8806 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://grokipedia.com/page/Fem_van_Empel",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (25957 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.fem.unicamp.br/",
+    "score": 0.825,
+    "rationale": "domínio acadêmico (.unicamp.br): 1.0; conteúdo moderado (4440 chars): 0.5; termos de spam encontrados ['newsletter']: -0.05"
+  },
+  {
+    "source_url": "https://www.instagram.com/feministasemmovimento/",
+    "score": 0.5,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (22163 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.femcultura.ac.gov.br/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (6765 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Eletromagnetismo",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (17592 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://brasilescola.uol.com.br/fisica/eletromagnetismo.htm",
+    "score": 0.8333,
+    "rationale": "domínio educativo (brasilescola.uol.com.br): 0.5; conteúdo substantivo (29267 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.todamateria.com.br/eletromagnetismo/",
+    "score": 0.825,
+    "rationale": "domínio educativo (todamateria.com.br): 0.5; conteúdo substantivo (6143 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://modern-physics.org/eletromagnetismo-principios-aplicacoes-e-teoria/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (5779 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Campo_magn%C3%A9tico",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (28052 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://concepto.de/campo-magnetico/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (8631 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.ingenierizando.com/electronica/campo-magnetico/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (8172 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://enciclopediauniversal.com/campo-magnetico/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (11396 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://brasilescola.uol.com.br/fisica/campo-magnetico.htm",
+    "score": 0.825,
+    "rationale": "domínio educativo (brasilescola.uol.com.br): 0.5; conteúdo substantivo (19846 chars): 1.0; termos de spam encontrados ['clique aqui']: -0.05"
+  },
+  {
+    "source_url": "https://educacao.uol.com.br/disciplinas/fisica/campo-magnetico---condutor-retilineo-aplicacoes-da-lei-de-ampere.htm",
+    "score": 0.6583,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (9421 chars): 1.0; termos de spam encontrados ['publicidade']: -0.05"
+  },
+  {
+    "source_url": "https://mundoeducacao.uol.com.br/fisica/lei-ampere.htm",
+    "score": 0.8167,
+    "rationale": "domínio educativo (mundoeducacao.uol.com.br): 0.5; conteúdo substantivo (11830 chars): 1.0; termos de spam encontrados ['clique aqui', 'publicidade']: -0.10"
+  },
+  {
+    "source_url": "https://www.infoescola.com/fisica/lei-de-ampere/",
+    "score": 0.4917,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo moderado (3792 chars): 0.5; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://www.todamateria.com.br/lei-de-ampere-o-que-e-formula-e-aplicacoes-com-exercicios-resolvidos/",
+    "score": 0.825,
+    "rationale": "domínio educativo (todamateria.com.br): 0.5; conteúdo substantivo (26136 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://www.todamateria.com.br/lei-de-faraday/",
+    "score": 0.825,
+    "rationale": "domínio educativo (todamateria.com.br): 0.5; conteúdo substantivo (14289 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Indu%C3%A7%C3%A3o_eletromagn%C3%A9tica",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (9644 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://blog.stoodi.com.br/blog/fisica/inducao-eletromagnetica/",
+    "score": 0.6583,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (8631 chars): 1.0; termos de spam encontrados ['política de privacidade']: -0.05"
+  },
+  {
+    "source_url": "https://vestibulares.estrategia.com/portal/materias/fisica/inducao-eletromagnetica/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (11076 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.todoestudo.com.br/fisica/inducao-eletromagnetica",
+    "score": 0.6583,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (9784 chars): 1.0; termos de spam encontrados ['publicidade']: -0.05"
+  },
+  {
+    "source_url": "https://querobolsa.com.br/enem/fisica/inducao-eletromagnetica",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (7930 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://fq.pt/images/alunos/11/11ano-F-2-2-3-inducao-eletromagnetica.pdf",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (7625 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Fluxo_magn%C3%A9tico",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (8073 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Pr%C3%A1tica",
+    "score": 0.6667,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo moderado (4702 chars): 0.5; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://grokipedia.com/page/cuidar_de_idosos_uma_prtica_co_construda",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (21393 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://labtest.com.br/blog/a-pratica-do-home-office-em-tempos-de-pandemia-da-covid-19/",
+    "score": 0.6333,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (7763 chars): 1.0; termos de spam encontrados ['assine', 'publicidade', 'política de privacidade']: -0.20"
+  },
+  {
+    "source_url": "https://www.praticabr.com/noticias/treinamento-de-pizza-na-pratica-florianopolis-com-a-bunge",
+    "score": 0.4833,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo moderado (3365 chars): 0.5; termos de spam encontrados ['clique aqui', 'política de privacidade']: -0.10"
+  },
+  {
+    "source_url": "https://analoghq.ai/blog/br/o-que-e-rainbow-washing/",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (12566 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Laborat%C3%B3rio",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (5066 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.amaissaude.com.br/sp",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (7101 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.natal.rn.gov.br/news/post2/40835",
+    "score": 0.6667,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo substantivo (9643 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.unimed.coop.br/site/web/natal/laboratoriosunimed",
+    "score": 0.4833,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo moderado (3811 chars): 0.5; termos de spam encontrados ['clique aqui', 'política de privacidade']: -0.10"
+  },
+  {
+    "source_url": "https://pt.wikipedia.org/wiki/Experimenta%C3%A7%C3%A3o",
+    "score": 0.8333,
+    "rationale": "domínio confiável (pt.wikipedia.org): 0.5; conteúdo substantivo (17657 chars): 1.0; sem termos de spam: 1.0"
+  },
+  {
+    "source_url": "https://www.sinonimos.com.br/experimentacao/",
+    "score": 0.3167,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo curto (1375 chars): 0.0; termos de spam encontrados ['política de privacidade', 'cadastre-se']: -0.10"
+  },
+  {
+    "source_url": "https://medicoes.nic.br/",
+    "score": 0.5,
+    "rationale": "domínio não reconhecido: 0.0; conteúdo moderado (2655 chars): 0.5; sem termos de spam: 1.0"
+  }
+]

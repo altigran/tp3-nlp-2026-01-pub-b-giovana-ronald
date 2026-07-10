@@ -20,6 +20,18 @@ from mcp.server.fastmcp import FastMCP
 from sentence_transformers import SentenceTransformer
 import json
 import numpy as np
+import sys
+
+# Mapeamento de topic_id -> name obtido da ementa estruturada
+_TOPIC_NAMES: dict[str, str] = {}
+_EMENTA_PATH = Path("data/ementa_estruturada.json")
+if _EMENTA_PATH.exists():
+    try:
+        _ementa_data = json.loads(_EMENTA_PATH.read_text(encoding="utf-8"))
+        for _t in _ementa_data.get("topics", []):
+            _TOPIC_NAMES[_t["topic_id"]] = _t.get("name", _t["topic_id"])
+    except Exception:
+        pass
 
 # --- Envelope do contrato (mantenha igual ao CONTRATO.md do kit) -----------
 # Códigos canônicos: MALFORMED_QUERY, INVALID_K, INVALID_FILTERS, CHUNK_NOT_FOUND.
@@ -58,11 +70,23 @@ def _load_corpus() -> tuple[list[dict], dict, np.ndarray | None]:
     embed_matrix: np.ndarray | None = None
     if CORPUS_EMBEDDINGS_PATH.exists():
         embed_matrix = np.load(str(CORPUS_EMBEDDINGS_PATH)).astype(np.float32)
-        # normaliza linhas para cosseno eficiente via dot product
-        if (embed_matrix):
-            norms = np.sqrt(np.sum(embed_matrix ** 2, axis=1, keepdims=True))
-            norms[norms == 0] = 1.0
-            embed_matrix = embed_matrix / norms
+    else:
+        sys.stderr.write("servidor: índice não encontrado. Recomputando embeddings...\n")
+        try:
+            sys.stderr.write(f"servidor: carregando modelo {EMBED_MODEL_NAME}...\n")
+            model = SentenceTransformer(EMBED_MODEL_NAME)
+            texts = [c.get("text", "") for c in chunks]
+            embed_matrix = np.asarray(model.encode(texts, normalize_embeddings=True), dtype=np.float32)
+            sys.stderr.write("servidor: embeddings recomputados com sucesso.\n")
+        except Exception as e:
+            sys.stderr.write(f"aviso: falha ao recomputar embeddings: {e}\n")
+            embed_matrix = None
+
+    # normaliza linhas para cosseno eficiente via dot product
+    if embed_matrix is not None:
+        norms = np.sqrt(np.sum(embed_matrix ** 2, axis=1, keepdims=True))
+        norms[norms == 0] = 1.0
+        embed_matrix = embed_matrix / norms
 
     return chunks, meta, embed_matrix
 
@@ -87,13 +111,13 @@ def _embed_query(query: str) -> np.ndarray | None:
     """Calcula embedding da query com sentence-transformers."""
     global _model
     if _model is None:
-        print(f"servidor: carregando modelo {EMBED_MODEL_NAME}...")
+        sys.stderr.write(f"servidor: carregando modelo {EMBED_MODEL_NAME}...\n")
         _model = SentenceTransformer(EMBED_MODEL_NAME)
     try:
         vec = np.asarray(_model.encode([query], normalize_embeddings=True), dtype=np.float32).flatten()
         return vec
     except Exception as exc:
-        print(f"aviso: erro ao calcular embedding da query: {exc}")
+        sys.stderr.write(f"aviso: erro ao calcular embedding da query: {exc}\n")
         return None
 
 
@@ -149,6 +173,7 @@ def list_topics() -> dict:
             "topics": [
                 {
                     "topic_id": t.get("topic_id", ""),
+                    "name": _TOPIC_NAMES.get(t.get("topic_id", ""), t.get("topic_id", "").capitalize()),
                     "coverage": t.get("coverage", 0.0),
                     "document_count": t.get("document_count", 0),
                     "avg_credibility": t.get("avg_credibility", 0.0),
@@ -195,7 +220,9 @@ def corpus_query(query: str, k: int = 5, filters: dict | None = None) -> dict:
         {
             "query": query,
             "k": k,
+            "filters": filters,
             "corpus_hash": CORPUS_HASH,
+            "returned": len(resultados),
             "chunks": [_chunk_payload(c) for c in resultados],
         }
     )
@@ -211,7 +238,7 @@ def get_chunk(chunk_id: str) -> dict:
     if c is None:
         return err("CHUNK_NOT_FOUND", f"chunk '{chunk_id}' nao encontrado no corpus")
 
-    return ok(_chunk_payload(c))
+    return ok({"chunk": _chunk_payload(c)})
 
 
 def main() -> None:

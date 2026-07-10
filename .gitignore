@@ -41,3 +41,6 @@ data/enade_enunciados/
 # === Sistema ===
 .DS_Store
 Thumbs.db
+
+# === Testes locais ===
+test_nvidia_api.py

@@ -1,0 +1,84 @@
+{
+  "contract_version": "1.0",
+  "target": ".venv/bin/python -m mcp_content",
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "skipped": 0
+  },
+  "requirements": [
+    {
+      "id": "R01",
+      "description": "As três tools do contrato estão anunciadas (list_topics, corpus_query, get_chunk)",
+      "status": "pass",
+      "detail": "todas presentes"
+    },
+    {
+      "id": "R02",
+      "description": "list_topics retorna envelope de sucesso {ok:true,data:{...}}",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "id": "R03",
+      "description": "Cada tópico de list_topics traz os campos obrigatórios",
+      "status": "pass",
+      "detail": "todos completos"
+    },
+    {
+      "id": "R04",
+      "description": "list_topics expõe corpus_hash do corpus congelado",
+      "status": "pass",
+      "detail": "corpus_hash=ee839f23dcc3737b…"
+    },
+    {
+      "id": "R05",
+      "description": "corpus_query retorna sucesso e no máximo k chunks (lista)",
+      "status": "pass",
+      "detail": "3 chunk(s) para k=3"
+    },
+    {
+      "id": "R06",
+      "description": "Todo chunk de corpus_query traz os metadados obrigatórios (Seção 3.1)",
+      "status": "pass",
+      "detail": "metadados completos"
+    },
+    {
+      "id": "R07",
+      "description": "get_chunk recupera por id o mesmo chunk, com metadados completos",
+      "status": "pass",
+      "detail": "round-trip de eletrostatica_010b3735_4 ok"
+    },
+    {
+      "id": "R08",
+      "description": "corpus_hash dos chunks é consistente com o de list_topics",
+      "status": "pass",
+      "detail": "consistente"
+    },
+    {
+      "id": "R09",
+      "description": "query vazia/malformada gera erro estruturado (sem propagar exceção)",
+      "status": "pass",
+      "detail": "erro estruturado code='MALFORMED_QUERY'"
+    },
+    {
+      "id": "R10",
+      "description": "k inválido (<=0) gera erro estruturado (sem propagar exceção)",
+      "status": "pass",
+      "detail": "erro estruturado code='INVALID_K'"
+    },
+    {
+      "id": "R11",
+      "description": "get_chunk de id inexistente gera erro estruturado (sem propagar exceção)",
+      "status": "pass",
+      "detail": "erro estruturado code='CHUNK_NOT_FOUND'"
+    },
+    {
+      "id": "R12",
+      "description": "Respostas trafegam como texto JSON UTF-8 válido (codificação)",
+      "status": "pass",
+      "detail": "4 resposta(s) válidas"
+    }
+  ]
+}
