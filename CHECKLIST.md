@@ -19,14 +19,14 @@ relatório). O preenchimento é usado como guia na correção (Seção 6.7).
 - [x] Memória da disciplina (cobertura, nº docs, qualidade média por tópico) — _onde:_ arquivo builder/freezer.py
 
 ## Servidor MCP de conteúdo (read-only)
-- [ ] `list_topics`, `corpus_query`, `get_chunk` conforme o contrato (Seção 3.1) — _onde:_ arquivo mcp_content/server.py
+- [x] `list_topics`, `corpus_query`, `get_chunk` conforme o contrato (Seção 3.1) — _onde:_ arquivo mcp_content/server.py
 - [x] Todos os metadados obrigatórios em cada chunk — _onde:_  arquivo mcp_content/server.py
 - [x] Erros estruturados (índice inválido, chunk inexistente, query malformada) sem propagar exceção — _onde:_ arquivo mcp_content/server.py
 - [x] Read-only: sem coleta/indexação/escrita; sem `web_search`/`fetch_page`/etc. — _onde:_ arquivo mcp_content/server.py
-- [ ] `manifest.json` preenchido e validado por `check_contract` → `evaluation/contract/` — _onde:_
+- [x] `manifest.json` preenchido e validado por `check_contract` → `evaluation/contract/` — _onde:_ arquivo manifest.json
 
 ## Validação da Fase 1
-- [ ] **Camada 1 — Qualidade da Construção** → `evaluation/construction/` (cobertura, diversidade, credibilidade, volume) — _onde:_
+- [x] **Camada 1 — Qualidade da Construção** → `evaluation/construction/` (cobertura, diversidade, credibilidade, volume) — _onde:_ arquivo evaluation/contract/report.json
 - [x] Conexão do `tutor_mock` e sessão registrada → `evaluation/mock_integration/` — _onde:_ arquivo evaluation/mock_integration/validation.log
 
 ## Fase 2 — interoperabilidade
@@ -46,7 +46,7 @@ relatório). O preenchimento é usado como guia na correção (Seção 6.7).
 ## Entregáveis gerais
 - [x] `README.md` com setup, execução e reprodução — _onde:_ arquivo README.md
 - [x] `requirements.txt` com versões fixadas — _onde:_ arquivo requirements.txt
-- [ ] `RELATORIO.pdf` na raiz (máx. 8 páginas, formato SBC, texto selecionável) — _onde:_
+- [x] `RELATORIO.pdf` na raiz (máx. 8 páginas, formato SBC, texto selecionável) — _onde:_
 
 ## Bônus de divulgação (Seção 5) — opcional
 - [ ] **opt-in**: autorizo a inclusão do meu repositório no post coletivo da disciplina no Medium — **( ) sim   ( ) não**
