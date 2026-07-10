@@ -66,9 +66,11 @@ def parse_ementa(raw_text: str) -> dict[str, Any]:
         top = str(result.group(1)).strip()
         with open("data/ementa_estruturada.example.json", 'r') as arq:
             exemplo = json.load(arq)
+        print("Separando em tópicos...")
         llm = LLMAuxiliar()
         resposta = llm.respondePrompt(f'''
-        Classifique os termos em tópicos e subtópicos. Para cada tópico, faça um JSON contendo o tópico, seus subtópicos e conceitos-chave do tópico. Retorne *apenas* uma lista de JSONs sem espaçamentos, nada de explicações ou texto adicional.
+        Classifique os termos em tópicos e subtópicos. Para cada tópico, gere um JSON com "topic_id" (slug do nome), "name", "subtopics" (lista de strings) e "key_concepts" (lista de strings).
+        Retorne APENAS uma lista JSON válida, utilizando aspas duplas, sem texto extra, sem quebras de linha entre itens, sem markdown.
         
         Exemplo:
         Entrada: "Ciclo hidrológico. Precipitação e sua medida. Evapotranspiração. Bacias hidrográficas: delimitação e características físicas. Escoamento superficial. Tempo de concentração."
@@ -80,6 +82,7 @@ def parse_ementa(raw_text: str) -> dict[str, Any]:
             resposta = resposta.replace("```json", '')
         if (resposta.endswith("```")):
             resposta = resposta.replace("```", '')
+        resposta = resposta.strip()
         print(resposta)
         topicos = json.loads(resposta)
     except Exception as erro:

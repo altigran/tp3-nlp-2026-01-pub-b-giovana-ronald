@@ -81,10 +81,8 @@ def freeze(chunk_payloads: list[dict], discipline: str = "", area: str = "") -> 
         encoding="utf-8",
     )
 
-    # Persistir metadados por chunk (sem embedding — fica no indexer).
-    meta_only = [{k: v for k, v in c.items() if k != "embedding"} for c in chunk_payloads]
     CORPUS_CHUNKS_PATH.write_text(
-        json.dumps(meta_only, ensure_ascii=False, indent=2),
+        json.dumps(chunk_payloads, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 

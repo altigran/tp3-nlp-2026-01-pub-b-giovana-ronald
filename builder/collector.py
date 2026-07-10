@@ -198,13 +198,14 @@ def _collect_publico(topic_id: str, query: str, docs: list[CollectedDoc], log_en
                 continue
             nome_original = alvo["name"]
             item.download(files=[nome_original], destdir=str(DATA_RAW))
-            arq_baixado = DATA_RAW / nome_original
+            arq_baixado = DATA_RAW / item_id / nome_original
             url = f"https://archive.org/details/{item_id}"
             if nome_original.lower().endswith(".pdf"):
                 doc = pymupdf.open(str(arq_baixado))
                 text = "".join(str(page.get_text() or "") for page in doc)
                 doc.close()
-                arq_baixado.unlink()  # remove o PDF original
+                # remove o PDF original
+                arq_baixado.unlink()
             else:
                 text = arq_baixado.read_text(encoding="utf-8", errors="ignore")
                 arq_baixado.unlink()
@@ -240,9 +241,13 @@ def collect(plan: dict) -> list[CollectedDoc]:
         topic_id: str = topico["topic_id"]
         fontes: list[str] = topico.get("target_sources", ["wikipedia", "web", "publico"])
         queries: list[str] = topico.get("queries", [])
+        max_docs: int = topico.get("max_docs", 15)
 
         for query in queries:
             for fonte in fontes:
+                topic_count = sum(1 for d in docs if topic_id in d.topic_ids)
+                if topic_count >= max_docs:
+                    break
                 match fonte:
                     case "wikipedia":
                         _collect_wikipedia(topic_id, query, docs, log_entries)
@@ -250,8 +255,9 @@ def collect(plan: dict) -> list[CollectedDoc]:
                         _collect_web(topic_id, query, docs, log_entries)
                     case "publico":
                         _collect_publico(topic_id, query, docs, log_entries)
-                    case _:
-                        log_entries.append({"fonte": fonte, "status": "unknown_source"})
+                print(f"{len(docs)} coletados.")
+            if sum(1 for d in docs if topic_id in d.topic_ids) >= max_docs:
+                break
 
     Path("data/collection_log.json").write_text(
         json.dumps({"collected_at": _iso_now(), "entries": log_entries}, ensure_ascii=False, indent=2),

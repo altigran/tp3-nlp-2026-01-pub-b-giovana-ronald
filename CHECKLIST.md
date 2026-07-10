@@ -14,15 +14,15 @@ relatório). O preenchimento é usado como guia na correção (Seção 6.7).
 - [x] Coletor com **≥3 fontes** distintas; log de execução persistido — _onde:_ arquivo builder/collector.py
 - [x] Avaliador de fontes com heurística explícita (score + justificativa) — _onde:_ arquvio builder/evaluator.py
 - [x] Deduplicador — _onde:_ arquivo builder/dedup.py
-- [x] Indexador em vector store com metadados obrigatórios por chunk — _onde:_ arquivo indexer.py
-- [x] Congelador: `corpus_hash` do índice e dos metadados → `data/corpus_meta.json` — _onde:_ arquivo freezer.py
-- [ ] Memória da disciplina (cobertura, nº docs, qualidade média por tópico) — _onde:_
+- [x] Indexador em vector store com metadados obrigatórios por chunk — _onde:_ arquivo builder/indexer.py
+- [x] Congelador: `corpus_hash` do índice e dos metadados → `data/corpus_meta.json` — _onde:_ arquivo builder/freezer.py
+- [x] Memória da disciplina (cobertura, nº docs, qualidade média por tópico) — _onde:_ arquivo builder/freezer.py
 
 ## Servidor MCP de conteúdo (read-only)
-- [ ] `list_topics`, `corpus_query`, `get_chunk` conforme o contrato (Seção 3.1) — _onde:_
-- [ ] Todos os metadados obrigatórios em cada chunk — _onde:_
-- [ ] Erros estruturados (índice inválido, chunk inexistente, query malformada) sem propagar exceção — _onde:_
-- [ ] Read-only: sem coleta/indexação/escrita; sem `web_search`/`fetch_page`/etc. — _onde:_
+- [ ] `list_topics`, `corpus_query`, `get_chunk` conforme o contrato (Seção 3.1) — _onde:_ arquivo mcp_content/server.py
+- [x] Todos os metadados obrigatórios em cada chunk — _onde:_  arquivo mcp_content/server.py
+- [x] Erros estruturados (índice inválido, chunk inexistente, query malformada) sem propagar exceção — _onde:_ arquivo mcp_content/server.py
+- [x] Read-only: sem coleta/indexação/escrita; sem `web_search`/`fetch_page`/etc. — _onde:_ arquivo mcp_content/server.py
 - [ ] `manifest.json` preenchido e validado por `check_contract` → `evaluation/contract/` — _onde:_
 
 ## Validação da Fase 1
@@ -36,16 +36,16 @@ relatório). O preenchimento é usado como guia na correção (Seção 6.7).
 - [ ] Análise de erros (3–5 casos) no relatório — _onde:_
 
 ## Reprodutibilidade (Seção 7)
-- [ ] Seeds fixas (amostragem de busca, shuffling) — _onde:_
-- [ ] `corpus_hash` estável e registrado — _onde:_
+- [x] Seeds fixas (amostragem de busca, shuffling) — _onde:_ arquivo build/planner.py
+- [x] `corpus_hash` estável e registrado — _onde:_ arquivo builder/freeze.py
 
 ## Higiene do repositório (Seção 6.4)
-- [ ] Conteúdo bruto e índice da vector store NÃO versionados — _onde:_
-- [ ] Enunciados completos do ENADE NÃO versionados (apenas referência + link) — _onde:_
+- [x] Conteúdo bruto e índice da vector store NÃO versionados — _onde:_ arquivo .gitignore
+- [x] Enunciados completos do ENADE NÃO versionados (apenas referência + link) — _onde:_ arquivo .gitignore
 
 ## Entregáveis gerais
 - [ ] `README.md` com setup, execução e reprodução — _onde:_
-- [ ] `requirements.txt` com versões fixadas — _onde:_
+- [x] `requirements.txt` com versões fixadas — _onde:_ arquivo requirements.txt
 - [ ] `RELATORIO.pdf` na raiz (máx. 8 páginas, formato SBC, texto selecionável) — _onde:_
 
 ## Bônus de divulgação (Seção 5) — opcional

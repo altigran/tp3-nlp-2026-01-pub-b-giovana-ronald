@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from urllib.parse import urlsplit
-
+from pathlib import Path
 
 # Heurísticas e pesos definidos:
 #   - Domínio da fonte (peso 2): wikipedia, top 5 universidades com bons cursos de física segundo o RUF da UOL, sites educativos
@@ -20,11 +20,11 @@ from urllib.parse import urlsplit
 #   - Ausência de termos spam (peso 1): penaliza "clique aqui", "assine", etc.
 
 DOMINIOS_ACADEMICOS = [
-    "usp.br",
-    "unicamp.br",
-    "ufmg.br",
-    "ufrj.br",
-    "ufsc.br",
+    ".usp.br",
+    ".unicamp.br",
+    ".ufmg.br",
+    ".ufrj.br",
+    ".ufsc.br",
 ]
 
 DOMINIOS_CONFIAVEIS = [
@@ -76,11 +76,11 @@ def evaluate(doc) -> SourceEvaluation:
     # 1. domínio confiável
     netloc = urlsplit(source_url).netloc.lstrip("www.")
     dominio_score = 0.0
-    achou = [dominio for dominio in DOMINIOS_CONFIAVEIS if dominio in netloc]
+    achou = [dominio for dominio in DOMINIOS_CONFIAVEIS if dominio == netloc]
     if (achou == []):
-        achou = [dominio for dominio in DOMINIOS_EDUCATIVOS if dominio in netloc]
+        achou = [dominio for dominio in DOMINIOS_EDUCATIVOS if dominio == netloc]
         if (achou == []):
-            achou = [dominio for dominio in DOMINIOS_ACADEMICOS if dominio in netloc]
+            achou = [dominio for dominio in DOMINIOS_ACADEMICOS if netloc.endswith(dominio)]
             if (achou == []):
                 reasons.append("domínio não reconhecido: 0.0")
             else:
@@ -97,7 +97,6 @@ def evaluate(doc) -> SourceEvaluation:
     tam_score = 0.0
     no_spam_score = 0.0
     try:
-        from pathlib import Path
         text = Path(raw_path).read_text(encoding="utf-8", errors="ignore")
         text_lower = text.lower()
         # 2. idioma

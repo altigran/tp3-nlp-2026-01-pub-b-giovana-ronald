@@ -10,6 +10,12 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
+def _sem_embedding(chunks):
+    dicio = {}
+    for k, v in chunks:
+        if k != "embedding":
+            dicio[k] = v
+    return dicio
 
 def run() -> None:
     from builder.parse_ementa import parse_ementa
@@ -80,7 +86,7 @@ def run() -> None:
 
     # 7) freeze        -> data/corpus_meta.json (corpus_hash, memória da disciplina)
     print("=== 7/7 freeze ===")
-    chunk_dicts = [asdict(c) for c in chunks]
+    chunk_dicts = [asdict(c, dict_factory=_sem_embedding) for c in chunks]
     corpus_hash = freeze(chunk_dicts, discipline=discipline, area=area)
 
     # atualiza manifest.json com corpus_hash e tópicos reais

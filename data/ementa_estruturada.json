@@ -9,28 +9,38 @@
         "Carga e Matéria",
         "O Campo Elétrico",
         "A Lei de Gauss",
-        "Potencial Elétrico",
-        "Capacitores e Dielétricos"
+        "Potencial Elétrico"
       ],
       "key_concepts": [
         "carga elétrica",
         "campo elétrico",
         "fluxo elétrico",
-        "potencial elétrico",
-        "capacitância"
+        "potencial"
       ]
     },
     {
-      "topic_id": "eletrodinamica",
-      "name": "Eletrodinâmica",
+      "topic_id": "capacitancia",
+      "name": "Capacitância",
+      "subtopics": [
+        "Capacitores e Dielétricos"
+      ],
+      "key_concepts": [
+        "capacitância",
+        "dielétricos",
+        "armazenamento de energia"
+      ]
+    },
+    {
+      "topic_id": "circuitos-eletricos",
+      "name": "Circuitos Elétricos",
       "subtopics": [
         "Corrente e Resistência Elétrica",
         "Forças Eletromotriz"
       ],
       "key_concepts": [
         "lei de ohm",
-        "condutividade",
-        "tensão elétrica"
+        "fem",
+        "resistividade"
       ]
     },
     {
@@ -44,7 +54,7 @@
       "key_concepts": [
         "indução eletromagnética",
         "fluxo magnético",
-        "força magnética"
+        "força de lorentz"
       ]
     },
     {
@@ -55,7 +65,7 @@
       ],
       "key_concepts": [
         "experimentação",
-        "medição"
+        "medições"
       ]
     }
   ],
