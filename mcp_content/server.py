@@ -15,12 +15,136 @@ servidor com o `check_contract` do kit:
 
 from __future__ import annotations
 
+import functools
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 from mcp.server.fastmcp import FastMCP
 from sentence_transformers import SentenceTransformer
 import json
 import numpy as np
+import pandas as pd
 import sys
+
+
+INTEROP_DIR = Path("evaluation/interop")
+CALLS_LOG_PATH = INTEROP_DIR / "chamadas.log"
+CALLS_RESUMO_PATH = INTEROP_DIR / "resumo_chamadas.json"
+CALLS_CSV_PATH = INTEROP_DIR / "resumo_chamadas.csv"
+
+
+class Logger:
+    def __init__(self) -> None:
+        self.timestamp: str = datetime.now(timezone.utc).isoformat()
+        self._calls: list[dict] = []
+        self._counter: int = 0
+
+    def loga(self, tool: str, tempo: float, result: dict) -> None:
+        self._counter += 1
+        erro = not result.get("ok", False)
+        topicos = []
+        if (tool == "corpus_query") and (erro == False):
+            chunks = result.get("data", {}).get("chunks", [])
+            seen = set()
+            for c in chunks:
+                for t in c.get("topics", []):
+                    if (t not in seen):
+                        seen.add(t)
+                        topicos.append(t)
+        self._calls.append({
+            "call_id": self._counter,
+            "tool": tool,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "vida_util_ms": round(tempo, 2),
+            "erro": erro,
+            "topicos": topicos,
+        })
+
+    def _resumo(self) -> dict:
+        total = len(self._calls)
+        log = {
+            "timestamp": self.timestamp,
+            "total": total,
+            "tools": {},
+            "latencia_media_ms": 0.0,
+            "respostas_degradadas": 0,
+        }
+        if (total == 0):
+            return log
+        tools = {}
+        for call in self._calls:
+            t = call["tool"]
+            if (t not in tools):
+                tools[t] = {"vezes_chamada": 0, "latencias": [], "n_erros": 0, "distribuicao_topicos": {}}
+            s = tools[t]
+            s["vezes_chamada"] += 1
+            s["latencias"].append(call["vida_util_ms"])
+            if (call["erro"]):
+                s["n_erros"] += 1
+            for tp in call.get("topicos", []):
+                s["distribuicao_topicos"][tp] = s["distribuicao_topicos"].get(tp, 0) + 1
+            if (call["vida_util_ms"] > 1000):
+                log["respostas_degradadas"] += 1
+        for t, s in tools.items():
+            lat = s["latencias"]
+            log["tools"][t] = {
+                "vezes_chamada": s["vezes_chamada"],
+                "avg_latencia_ms": round(sum(lat) / len(lat), 2),
+                "min_latencia_ms": round(min(lat), 2),
+                "max_latencia_ms": round(max(lat), 2),
+                "n_erros": s["n_erros"],
+                "distribuicao_topicos": dict(sorted(s["distribuicao_topicos"].items(), key=lambda x: x[1], reverse=True)),
+            }
+        all_lat = [c["vida_util_ms"] for c in self._calls]
+        log["latencia_media_ms"] = round(sum(all_lat) / len(all_lat), 2)
+        return log
+
+    def _salva_tabela(self, resumo: dict) -> None:
+        linhas = []
+        for tool, stats in resumo.get("tools", {}).items():
+            linhas.append({
+                "Tool": tool,
+                "Nº chamadas": stats["vezes_chamada"],
+                "Latência média (ms)": stats["avg_latencia_ms"],
+                "Latência mín (ms)": stats["min_latencia_ms"],
+                "Latência máx (ms)": stats["max_latencia_ms"],
+                "Nº erros": stats["n_erros"],
+            })
+        if not linhas:
+            return
+        df = pd.DataFrame(linhas)
+        df.to_csv(CALLS_CSV_PATH, index=False, encoding="utf-8")
+
+    def salva_logs(self) -> None:
+        INTEROP_DIR.mkdir(parents=True, exist_ok=True)
+        CALLS_LOG_PATH.write_text(
+            json.dumps({"timestamp": self.timestamp, "calls": self._calls}, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        resumo = self._resumo()
+        CALLS_RESUMO_PATH.write_text(
+            json.dumps(resumo, ensure_ascii=False, indent=2), encoding="utf-8",
+        )
+        self._salva_tabela(resumo)
+
+_LOGGER = Logger()
+
+def log_call(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        tool_name = func.__name__
+        start = time.perf_counter()
+        try:
+            result = func(*args, **kwargs)
+        except Exception:
+            elapsed = (time.perf_counter() - start) * 1000
+            _LOGGER.loga(tool_name, elapsed, {"ok": False})
+            raise
+        elapsed = (time.perf_counter() - start) * 1000
+        _LOGGER.loga(tool_name, elapsed, result)
+        return result
+    return wrapper
+
 
 # Mapeamento de topic_id -> name obtido da ementa estruturada
 _TOPIC_NAMES: dict[str, str] = {}
@@ -155,6 +279,7 @@ def _chunk_payload(c: dict) -> dict:
 # --- Tools do contrato ------------------------------------------------------
 
 @mcp.tool()
+@log_call
 def list_topics() -> dict:
     """Tópicos cobertos e estado por tópico (cobertura, nº docs, credibilidade)."""
     # Devolver discipline/area/enade_editions/corpus_hash/topics reais.
@@ -168,7 +293,7 @@ def list_topics() -> dict:
         {
             "discipline": meta.get("discipline", ""),
             "area": meta.get("area", ""),
-            "enade_editions": ["2019", "2021", "2023"],
+            "enade_editions": ["2017", "2019", "2023"],
             "corpus_hash": CORPUS_HASH,
             "topics": [
                 {
@@ -186,6 +311,7 @@ def list_topics() -> dict:
 
 
 @mcp.tool()
+@log_call
 def corpus_query(query: str, k: int = 5, filters: dict | None = None) -> dict:
     """k chunks mais relevantes, com proveniência completa nos metadados."""
     if not isinstance(query, str) or not query.strip():
@@ -229,6 +355,7 @@ def corpus_query(query: str, k: int = 5, filters: dict | None = None) -> dict:
 
 
 @mcp.tool()
+@log_call
 def get_chunk(chunk_id: str) -> dict:
     """Recupera um chunk específico por identificador."""
     if not isinstance(chunk_id, str) or not chunk_id.strip():
@@ -242,21 +369,24 @@ def get_chunk(chunk_id: str) -> dict:
 
 
 @mcp.tool()
+@log_call
 def solve_physics_formula(expression: str) -> dict:
     """Ferramenta bônus: Resolve ou simplifica expressões matemáticas e equações simbólicas usando SymPy."""
     if not isinstance(expression, str) or not expression.strip():
         return err("MALFORMED_QUERY", "parâmetro 'expression' ausente ou vazio")
     try:
         import sympy
-        # Avalia a expressão de forma segura
         parsed = sympy.sympify(expression)
-        result = parsed.evalf() if parsed.is_number else parsed
+        result = sympy.N(parsed) if parsed.is_number else parsed
         return ok({"expression": expression, "result": str(result)})
     except Exception as e:
         return err("INVALID_EXPRESSION", f"Falha ao avaliar expressão matemática: {e}")
 
 def main() -> None:
-    mcp.run()
+    try:
+        mcp.run()
+    finally:
+        _LOGGER.salva_logs()
 
 
 if __name__ == "__main__":

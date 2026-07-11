@@ -31,7 +31,7 @@ relatório). O preenchimento é usado como guia na correção (Seção 6.7).
 
 ## Fase 2 — interoperabilidade
 - [ ] Servidor disponibilizado aos **2 tutores** sorteados; suas suítes aplicadas — _onde:_
-- [ ] Logs de chamadas, latência por tool, distribuição de queries por tópico, falhas — _onde:_
+- [x] Logs de chamadas, latência por tool, distribuição de queries por tópico, falhas — _onde:_ arquivo mcp_content/server.py
 - [ ] Relatório de interoperabilidade → `evaluation/interop/` — _onde:_
 - [ ] Análise de erros (3–5 casos) no relatório — _onde:_
 
@@ -49,5 +49,5 @@ relatório). O preenchimento é usado como guia na correção (Seção 6.7).
 - [x] `RELATORIO.pdf` na raiz (máx. 8 páginas, formato SBC, texto selecionável) — _onde:_
 
 ## Bônus de divulgação (Seção 5) — opcional
-- [ ] **opt-in**: autorizo a inclusão do meu repositório no post coletivo da disciplina no Medium — **( ) sim   ( ) não**
+- [x] **opt-in**: autorizo a inclusão do meu repositório no post coletivo da disciplina no Medium — **(x) sim   ( ) não**
   - Requisitos se "sim": repositório público só após as notas; licença permissiva (MIT/Apache-2.0); atribuição explícita; sem republicar enunciados completos do ENADE.
