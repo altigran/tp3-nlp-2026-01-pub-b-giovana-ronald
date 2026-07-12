@@ -1,0 +1,3 @@
+Tool,Nº chamadas,Latência média (ms),Latência mín (ms),Latência máx (ms),Nº erros
+list_topics,1,0.02,0.02,0.02,0
+corpus_query,4,2650.12,46.12,10395.56,0

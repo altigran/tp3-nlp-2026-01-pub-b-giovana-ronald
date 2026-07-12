@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-07-12T03:40:04.456053+00:00",
+  "calls": [
+    {
+      "call_id": 1,
+      "tool": "list_topics",
+      "timestamp": "2026-07-12T03:40:04.509044+00:00",
+      "vida_util_ms": 0.02,
+      "erro": false,
+      "topicos": []
+    },
+    {
+      "call_id": 2,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T03:40:23.365480+00:00",
+      "vida_util_ms": 10395.56,
+      "erro": false,
+      "topicos": [
+        "eletromagnetismo"
+      ]
+    },
+    {
+      "call_id": 3,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T03:41:02.161510+00:00",
+      "vida_util_ms": 64.55,
+      "erro": false,
+      "topicos": [
+        "circuitos-eletricos",
+        "eletromagnetismo",
+        "eletrostatica"
+      ]
+    },
+    {
+      "call_id": 4,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T03:41:19.654947+00:00",
+      "vida_util_ms": 46.12,
+      "erro": false,
+      "topicos": [
+        "pratica",
+        "eletromagnetismo"
+      ]
+    },
+    {
+      "call_id": 5,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T03:45:58.862817+00:00",
+      "vida_util_ms": 94.26,
+      "erro": false,
+      "topicos": [
+        "capacitancia"
+      ]
+    }
+  ]
+}

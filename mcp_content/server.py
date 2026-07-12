@@ -139,9 +139,11 @@ def log_call(func):
         except Exception:
             elapsed = (time.perf_counter() - start) * 1000
             _LOGGER.loga(tool_name, elapsed, {"ok": False})
+            #_LOGGER.salva_logs()
             raise
         elapsed = (time.perf_counter() - start) * 1000
         _LOGGER.loga(tool_name, elapsed, result)
+        #_LOGGER.salva_logs()
         return result
     return wrapper
 
@@ -383,6 +385,7 @@ def solve_physics_formula(expression: str) -> dict:
         return err("INVALID_EXPRESSION", f"Falha ao avaliar expressão matemática: {e}")
 
 def main() -> None:
+    #mcp.run()
     try:
         mcp.run()
     finally:
