@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-07-10T02:34:00Z",
+  "collected_at": "2026-07-11T15:53:19Z",
   "entries": [
     {
       "source": "wikipedia",
@@ -10,19 +10,25 @@
     {
       "source": "web",
       "query": "Eletrostática",
-      "url": "https://www.todamateria.com.br/eletrostatica/",
+      "url": "https://br.pinterest.com/ideas/eletrostática/934082180451/",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Eletrostática",
-      "url": "https://brasilescola.uol.com.br/fisica/principio-eletrostatica.htm",
+      "url": "https://pt.slideshare.net/slideshow/eletrostticapptx-257293426/257293426",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Eletrostática",
-      "url": "https://militares.estrategia.com/portal/materias-e-dicas/fisica/propriedades-da-eletrostatica-tudo-o-que-voce-precisa-saber/",
+      "url": "https://www.eletricajati.com.br/eletrostática-uma-introdução",
+      "status": "ok"
+    },
+    {
+      "source": "web",
+      "query": "Eletrostática",
+      "url": "https://www.edrawmind.com/mind-maps/11724/eletrostática/?lang=PT",
       "status": "ok"
     },
     {
@@ -33,25 +39,24 @@
     {
       "source": "web",
       "query": "Carga e Matéria",
-      "url": "https://www.fundacionendesa.org/es/educacion/endesa-educa/recursos/materia-carga-electrica",
+      "url": "https://clodomirounsihuayvila.weebly.com/uploads/1/0/2/1/10218846/aula_1.pdf",
+      "status": "ok"
+    },
+    {
+      "source": "web",
+      "url": "http://eletrica.ufpr.br/sebastiao/wa_files/te160+aula+02+-+introducao+carga+e+materia+carga+eletrica.pdf",
+      "status": "http_404"
+    },
+    {
+      "source": "web",
+      "query": "Carga e Matéria",
+      "url": "https://www.todamateria.com.br/carga-eletrica/",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Carga e Matéria",
-      "url": "https://www.preparaenem.com/fisica/antimateria.htm",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "Carga e Matéria",
-      "url": "https://www.youtube.com/watch?v=HT8Mkwqzu2E",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "Carga e Matéria",
-      "url": "https://uspdigital.usp.br/jupiterweb/jupDisciplina?sgldis=SEL0410",
+      "url": "https://brasilescola.uol.com.br/fisica/carga-eletrica.htm",
       "status": "ok"
     },
     {
@@ -97,13 +102,13 @@
     {
       "source": "web",
       "query": "A Lei de Gauss",
-      "url": "https://sites.ifi.unicamp.br/f328/files/2013/08/Aula-03-F328-2S-2013.pdf",
+      "url": "https://fma.if.usp.br/~mlima/teaching/4320292_2012/Cap2.pdf",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "A Lei de Gauss",
-      "url": "https://www.todoestudo.com.br/fisica/lei-de-gauss",
+      "url": "https://sites.ifi.unicamp.br/f328/files/2013/08/Aula-03-F328-2S-2013.pdf",
       "status": "ok"
     },
     {
@@ -153,13 +158,13 @@
     {
       "source": "web",
       "query": "carga elétrica",
-      "url": "https://www.todamateria.com.br/carga-eletrica/",
+      "url": "https://brasilescola.uol.com.br/fisica/carga-eletrica.htm",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "carga elétrica",
-      "url": "https://brasilescola.uol.com.br/fisica/carga-eletrica.htm",
+      "url": "https://www.todamateria.com.br/carga-eletrica/",
       "status": "ok"
     },
     {
@@ -170,9 +175,9 @@
     },
     {
       "source": "web",
-      "url": "https://www.eletrica.ufpr.br/sebastiao/wa_files/te039+aula+02+-+introducao+carga+e+materia+carga+eletrica.pdf",
-      "status": "fetch_error",
-      "detail": "HTTPSConnectionPool(host='www.eletrica.ufpr.br', port=443): Max retries exceeded with url: /sebastiao/wa_files/te039+aula+02+-+introducao+carga+e+materia+carga+eletrica.pdf (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))"
+      "query": "carga elétrica",
+      "url": "https://brasilescola.uol.com.br/o-que-e/fisica/o-que-e-carga-eletrica.htm",
+      "status": "ok"
     },
     {
       "source": "wikipedia",
@@ -189,13 +194,7 @@
     {
       "source": "web",
       "query": "campo elétrico",
-      "url": "https://brasilescola.uol.com.br/fisica/campo-eletrico.htm",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "campo elétrico",
-      "url": "https://modern-physics.org/campo-eletrico-explicado-fundamentos-efeitos-e-aplicacoes/",
+      "url": "https://m.brasilescola.uol.com.br/fisica/campo-eletrico.htm",
       "status": "ok"
     },
     {
@@ -225,7 +224,7 @@
     {
       "source": "web",
       "query": "Capacitância",
-      "url": "https://www.newtoncbraga.com.br/matematica-na-eletronica/1975-m097.html",
+      "url": "https://humorquantico.com/courses/3o-ano-do-ensino-medio-fisica/lessons/3-ano-eletrostatica/topic/capacitancia/",
       "status": "ok"
     },
     {
@@ -236,25 +235,31 @@
     {
       "source": "web",
       "query": "Capacitores e Dielétricos",
+      "url": "https://www.fisica.ufjf.br/~radias/Fisica3/Cap24-CapacitanciaeDieletricos.pdf",
+      "status": "ok"
+    },
+    {
+      "source": "web",
+      "query": "Capacitores e Dielétricos",
+      "url": "https://sistemas.eel.usp.br/docentes/arquivos/6495737/LOB1053/Unidade5_CapacitanciaeDieletricos.pdf",
+      "status": "ok"
+    },
+    {
+      "source": "web",
+      "query": "Capacitores e Dielétricos",
       "url": "https://resources.altium.com/pt/p/guide-capacitor-dielectrics-and-ceramics",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Capacitores e Dielétricos",
-      "url": "https://query.libretexts.org/Idioma_Portugues/Fisica_Universitaria_(OpenStax)/19:_Potencial_eletrico_e_campo_eletrico/19.05:_Capacitores_e_dielétricos",
+      "url": "https://www.simpleteacher.com.br/blog/dieletricos-capacitores",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Capacitores e Dielétricos",
-      "url": "https://mundoeducacao.uol.com.br/fisica/dieletricos.htm",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "Capacitores e Dielétricos",
-      "url": "https://engenheirodemateriais.com.br/2015/11/04/materiais-dieletricos/",
+      "url": "https://embarcados.com.br/capacitores/",
       "status": "ok"
     },
     {
@@ -266,19 +271,14 @@
     {
       "source": "web",
       "query": "capacitância",
-      "url": "https://www.fluke.com/pt-pt/saber-mais/blog/aplicacoes-eletricas/o-que-e-a-capacitancia",
+      "url": "https://pt.estudyando.com/o-que-e-capacitancia-definicao-equacao-e-exemplos/",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "capacitância",
-      "url": "https://sites.ifi.unicamp.br/f328/files/2014/09/Aula-05-F328-1S-2014.pdf",
+      "url": "https://www.electricity-magnetism.org/pt-br/o-que-e-capacitancia/",
       "status": "ok"
-    },
-    {
-      "source": "web",
-      "url": "https://www.makerhero.com/guia/eletricidade/capacitancia/",
-      "status": "http_403"
     },
     {
       "source": "wikipedia",
@@ -301,36 +301,12 @@
       "source": "web",
       "url": "https://www.eletrica.ufpr.br/mehl/materiais/aulas/te337-aula-7-dieletricos.pdf",
       "status": "fetch_error",
-      "detail": "HTTPSConnectionPool(host='www.eletrica.ufpr.br', port=443): Max retries exceeded with url: /mehl/materiais/aulas/te337-aula-7-dieletricos.pdf (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))"
+      "detail": "HTTPSConnectionPool(host='www.eletrica.ufpr.br', port=443): Max retries exceeded with url: /mehl/materiais/aulas/te337-aula-7-dieletricos.pdf (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)')))"
     },
     {
       "source": "wikipedia",
       "query": "armazenamento de energia",
       "url": "https://pt.wikipedia.org/wiki/Armazenamento_de_energia",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "armazenamento de energia",
-      "url": "https://www.iberdrola.com/sustentabilidade/armazenamento-eficiente-de-energia",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "armazenamento de energia",
-      "url": "https://cepel.br/2025/04/29/desafios-solucoes-e-tecnologias-no-armazenamento-de-energia-para-o-setor-eletrico/",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "armazenamento de energia",
-      "url": "https://bydenergia.com/sistema-de-armazenagem-de-energia-ess/",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "armazenamento de energia",
-      "url": "https://www.ibm.com/br-pt/think/topics/energy-storage",
       "status": "ok"
     },
     {
@@ -347,13 +323,13 @@
     {
       "source": "web",
       "query": "Circuitos Elétricos",
-      "url": "https://www.mundodaeletrica.com.br/tipos-de-circuitos-eletricos-quais-sao/",
+      "url": "https://engenharia360.com/circuitos-eletricos-o-que-sao-e-para-que-servem/",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Circuitos Elétricos",
-      "url": "https://engenharia360.com/circuitos-eletricos-o-que-sao-e-para-que-servem/",
+      "url": "https://www.mundodaeletrica.com.br/tipos-de-circuitos-eletricos-quais-sao/",
       "status": "ok"
     },
     {
@@ -375,31 +351,30 @@
     {
       "source": "web",
       "query": "Corrente e Resistência Elétrica",
+      "url": "https://sistemas.eel.usp.br/docentes/arquivos/6495737/LOB1053/Unidade6_CorrenteeResistenciaEletrica.pdf",
+      "status": "ok"
+    },
+    {
+      "source": "web",
+      "url": "https://www.academia.edu/39189612/Capítulo_26_Corrente_e_Resistência",
+      "status": "http_403"
+    },
+    {
+      "source": "web",
+      "query": "Corrente e Resistência Elétrica",
       "url": "https://embarcados.com.br/lei-de-ohm/",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Corrente e Resistência Elétrica",
-      "url": "https://loja.br.abb.com/blog/post/tensao-corrente-e-resistencia-eletrica",
+      "url": "https://pt.khanacademy.org/science/fisica-ensino-medio/x6443ccf4d35f6b36:circuitos-eletricos/x6443ccf4d35f6b36:corrente-resis/a/resistance-and-resistivity-ap1",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Corrente e Resistência Elétrica",
-      "url": "https://www.mundodaeletrica.com/corrente-tensao-resistencia-eletrica-qual-relacao/",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "Corrente e Resistência Elétrica",
-      "url": "https://www.todamateria.com.br/resistencia-eletrica/",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "Corrente e Resistência Elétrica",
-      "url": "https://www.slideshare.net/slideshow/tenso-corrente-e-resistencia-eltricapptx/259759402",
+      "url": "https://www.embrasul.com.br/post/conheca-as-4-grandezas-eletricas-basicas",
       "status": "ok"
     },
     {
@@ -427,8 +402,9 @@
     },
     {
       "source": "web",
+      "query": "Forças Eletromotriz",
       "url": "https://wp.ufpel.edu.br/mllsilva/files/2018/11/Aula_10_Forca_eletromotriz.pdf",
-      "status": "http_403"
+      "status": "ok"
     },
     {
       "source": "wikipedia",
@@ -462,19 +438,19 @@
     {
       "source": "web",
       "query": "fem",
-      "url": "https://www.fem.unicamp.br/",
+      "url": "https://translate.academic.ru/fem/en/ru/",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "fem",
-      "url": "https://www.instagram.com/feministasemmovimento/",
+      "url": "https://t.me/SweetFurryFemboy",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "fem",
-      "url": "https://www.femcultura.ac.gov.br/",
+      "url": "https://interestingengineering.com/science/what-is-finite-element-analysis-and-how-does-it-work",
       "status": "ok"
     },
     {
@@ -486,19 +462,19 @@
     {
       "source": "web",
       "query": "Eletromagnetismo",
-      "url": "https://brasilescola.uol.com.br/fisica/eletromagnetismo.htm",
+      "url": "https://br.pinterest.com/ideas/eletromagnetismo/909944873067/",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Eletromagnetismo",
-      "url": "https://www.todamateria.com.br/eletromagnetismo/",
+      "url": "https://pt-abcdef-wiki.nproxy.org/wiki/Electromagnetism",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Eletromagnetismo",
-      "url": "https://modern-physics.org/eletromagnetismo-principios-aplicacoes-e-teoria/",
+      "url": "https://pt.slideshare.net/slideshow/eletromagnetismo-65912568/65912568",
       "status": "ok"
     },
     {
@@ -523,12 +499,6 @@
       "source": "web",
       "query": "Campo Magnético",
       "url": "https://enciclopediauniversal.com/campo-magnetico/",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "Campo Magnético",
-      "url": "https://brasilescola.uol.com.br/fisica/campo-magnetico.htm",
       "status": "ok"
     },
     {
@@ -568,19 +538,32 @@
     {
       "source": "web",
       "query": "A Lei de Faraday",
-      "url": "https://www.todamateria.com.br/lei-de-faraday/",
+      "url": "https://www.iee-business.com/pt/knowledge/basic-knowledge-electrical-laws-1068",
       "status": "ok"
     },
     {
       "source": "web",
-      "url": "https://mundoeducacao.uol.com.br/fisica/lei-faraday.htm",
-      "status": "fetch_error",
-      "detail": "HTTPSConnectionPool(host='mundoeducacao.uol.com.br', port=443): Read timed out. (read timeout=15)"
+      "query": "A Lei de Faraday",
+      "url": "https://blog.stoodi.com.br/blog/fisica/lei-de-faraday-o-que-e/",
+      "status": "ok"
     },
     {
       "source": "web",
-      "url": "https://www.ifsc.usp.br/~strontium/Teaching/Material2010-2+FFI0106+LabFisicaIII/11-LeideInducaodeFaraday.pdf",
-      "status": "http_404"
+      "query": "A Lei de Faraday",
+      "url": "https://aprovatotal.com.br/lei-de-faraday/",
+      "status": "ok"
+    },
+    {
+      "source": "web",
+      "query": "A Lei de Faraday",
+      "url": "https://www.respondeai.com.br/conteudo/fisica/magnetismo/introducao-a-lei-de-faraday/538",
+      "status": "ok"
+    },
+    {
+      "source": "web",
+      "query": "A Lei de Faraday",
+      "url": "https://www.todamateria.com.br/lei-de-faraday/",
+      "status": "ok"
     },
     {
       "source": "wikipedia",
@@ -603,13 +586,13 @@
     {
       "source": "web",
       "query": "indução eletromagnética",
-      "url": "https://www.todoestudo.com.br/fisica/inducao-eletromagnetica",
+      "url": "https://querobolsa.com.br/enem/fisica/inducao-eletromagnetica",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "indução eletromagnética",
-      "url": "https://querobolsa.com.br/enem/fisica/inducao-eletromagnetica",
+      "url": "https://prezi.com/p/kx_moz1n3gbf/inducao-eletromagnetica/",
       "status": "ok"
     },
     {
@@ -620,20 +603,8 @@
     },
     {
       "source": "wikipedia",
-      "query": "fluxo magnético",
-      "url": "https://pt.wikipedia.org/wiki/Fluxo_magn%C3%A9tico",
-      "status": "ok"
-    },
-    {
-      "source": "wikipedia",
       "query": "Prática",
       "url": "https://pt.wikipedia.org/wiki/Pr%C3%A1tica",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "query": "Prática",
-      "url": "https://grokipedia.com/page/cuidar_de_idosos_uma_prtica_co_construda",
       "status": "ok"
     },
     {
@@ -655,6 +626,12 @@
       "status": "ok"
     },
     {
+      "source": "web",
+      "query": "Prática",
+      "url": "https://porquesoudna.blogspot.com/2013/02/pratica-23-aula-pratica-enzimas.html",
+      "status": "ok"
+    },
+    {
       "source": "publico",
       "item_id": "amatematicacomolinguagem",
       "status": "sem arquivo legível"
@@ -673,19 +650,25 @@
     {
       "source": "web",
       "query": "Laboratório",
-      "url": "https://www.amaissaude.com.br/sp",
+      "url": "https://www.laboratoriocpde.com.br/",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Laboratório",
-      "url": "https://www.natal.rn.gov.br/news/post2/40835",
+      "url": "https://labcostacurta.com.br/",
       "status": "ok"
     },
     {
       "source": "web",
       "query": "Laboratório",
-      "url": "https://www.unimed.coop.br/site/web/natal/laboratoriosunimed",
+      "url": "https://www.laboratoriosreunidos.com.br/",
+      "status": "ok"
+    },
+    {
+      "source": "web",
+      "query": "Laboratório",
+      "url": "https://www.cdl.med.br/",
       "status": "ok"
     },
     {
@@ -709,28 +692,6 @@
       "source": "web",
       "url": "https://www.infopedia.pt/dicionarios/lingua-portuguesa/experimentação",
       "status": "http_403"
-    },
-    {
-      "source": "wikipedia",
-      "query": "medições",
-      "status": "not_found"
-    },
-    {
-      "source": "web",
-      "query": "medições",
-      "url": "https://medicoes.nic.br/",
-      "status": "ok"
-    },
-    {
-      "source": "web",
-      "url": "https://www.dicio.com.br/medicoes/",
-      "status": "http_403"
-    },
-    {
-      "source": "web",
-      "url": "https://br.omega.com/section/instrumentos-medicoes-testes-geral.html",
-      "status": "fetch_error",
-      "detail": "HTTPSConnectionPool(host='br.omega.com', port=443): Max retries exceeded with url: /section/instrumentos-medicoes-testes-geral.html (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))"
     }
   ]
 }

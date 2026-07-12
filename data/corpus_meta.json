@@ -1,40 +1,40 @@
 {
-  "corpus_hash": "ee839f23dcc3737b2df77c833f2069fd3db95e6dda939130abd360d28df5449e",
-  "chunk_count": 430,
+  "corpus_hash": "0814df51b8ccea272094e514dd450bceb12faeb36269afbd8a532659dd52a000",
+  "chunk_count": 368,
   "discipline": "Física II E",
   "area": "Engenharia Elétrica",
   "topics_state": [
     {
       "topic_id": "capacitancia",
-      "coverage": 0.0811,
+      "coverage": 0.0968,
       "document_count": 3,
-      "avg_credibility": 0.897,
+      "avg_credibility": 0.8903,
       "discipline": "Física II E"
     },
     {
       "topic_id": "circuitos-eletricos",
-      "coverage": 0.2162,
-      "document_count": 8,
-      "avg_credibility": 0.8299,
+      "coverage": 0.2258,
+      "document_count": 7,
+      "avg_credibility": 0.8568,
       "discipline": "Física II E"
     },
     {
       "topic_id": "eletromagnetismo",
-      "coverage": 0.2703,
-      "document_count": 10,
-      "avg_credibility": 0.8292,
+      "coverage": 0.1935,
+      "document_count": 6,
+      "avg_credibility": 0.8289,
       "discipline": "Física II E"
     },
     {
       "topic_id": "eletrostatica",
-      "coverage": 0.3784,
-      "document_count": 14,
-      "avg_credibility": 0.8465,
+      "coverage": 0.4194,
+      "document_count": 13,
+      "avg_credibility": 0.8545,
       "discipline": "Física II E"
     },
     {
       "topic_id": "pratica",
-      "coverage": 0.0541,
+      "coverage": 0.0645,
       "document_count": 2,
       "avg_credibility": 0.8333,
       "discipline": "Física II E"

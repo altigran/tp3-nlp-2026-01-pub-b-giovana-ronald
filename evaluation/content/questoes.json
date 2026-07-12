@@ -1,0 +1,392 @@
+[
+  {
+    "ano": 2023,
+    "numero": 10,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "II.",
+      "B": "III.",
+      "C": "I e II.",
+      "D": "I e IV.",
+      "E": "III e IV."
+    },
+    "alternativa_correta": "A",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 11,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "I e II.",
+      "B": "I e III.",
+      "C": "II e IV.",
+      "D": "III e V.",
+      "E": "IV e V."
+    },
+    "alternativa_correta": "A",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 13,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "a = 0 e b = 0",
+      "B": "a != 0 e b != 0",
+      "C": "a = 0 e b = w.raiz(m0.e0)",
+      "D": "a = w.raiz(m0.e0) e b = 0",
+      "E": "a != 0 e b = w.raiz(m0.e0)"
+    },
+    "alternativa_correta": "C",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 15,
+    "tipo": "objetiva",
+    "topico": "circuitos-eletricos",
+    "alternativas": {
+      "A": "I e II.",
+      "B": "I e III.",
+      "C": "II e IV.",
+      "D": "I, III e IV.",
+      "E": "II, III e IV."
+    },
+    "alternativa_correta": "A",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 17,
+    "tipo": "objetiva",
+    "topico": "pratica",
+    "alternativas": {
+      "A": "I e II.",
+      "B": "I e IV.",
+      "C": "II e III.",
+      "D": "I, III e IV.",
+      "E": "II, III e IV."
+    },
+    "alternativa_correta": "B",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 18,
+    "tipo": "objetiva",
+    "topico": "circuitos-eletricos",
+    "alternativas": {
+      "A": "Figura A",
+      "B": "Figura B",
+      "C": "Figura C",
+      "D": "Figura D",
+      "E": "Figura E"
+    },
+    "alternativa_correta": "E",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 19,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "As assercoes I e II sao proposicoes verdadeiras, e a II e uma justificativa correta da I.",
+      "B": "As assercoes I e II sao proposicoes verdadeiras, mas a II nao e uma justificativa correta da I.",
+      "C": "A assercao I e uma proposicao verdadeira, e a II e uma proposicao falsa.",
+      "D": "A assercao I e uma proposicao falsa, e a II e uma proposicao verdadeira.",
+      "E": "As assercoes I e II sao proposicoes falsas."
+    },
+    "alternativa_correta": "D",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 21,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "8 mWb/Ae.m.",
+      "B": "23 mWb/Ae.m.",
+      "C": "40 mWb/Ae.m.",
+      "D": "25 Wb/Ae.m.",
+      "E": "44 Wb/Ae.m."
+    },
+    "alternativa_correta": "B",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 23,
+    "tipo": "objetiva",
+    "topico": "circuitos-eletricos",
+    "alternativas": {
+      "A": "0,72.",
+      "B": "1,09.",
+      "C": "1,20.",
+      "D": "2,12.",
+      "E": "3,00."
+    },
+    "alternativa_correta": "C",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 26,
+    "tipo": "objetiva",
+    "topico": "pratica",
+    "alternativas": {
+      "A": "X pode ser suprimido, e a energia do painel fotovoltaico pode ser ligada diretamente na bateria para carrega-la; Y pode ser suprimido, e a energia do painel fotovoltaico pode ser distribuida diretamente a residencia.",
+      "B": "X corresponde a um controlador de carga responsavel por controlar o carregamento e o descarregamento da bateria; e Y corresponde a outro controlador de carga.",
+      "C": "X corresponde a um controlador de carga; e Y pode ser suprimido, assim, a energia proveniente do controlador de carga pode ser ligada diretamente na residencia.",
+      "D": "X pode ser suprimido; e Y corresponde a um inversor de frequencia responsavel por converter a energia do painel fotovoltaico de corrente continua em corrente alternada (CC-CA).",
+      "E": "X corresponde a um controlador de carga; e Y corresponde a um inversor de frequencia responsavel por converter a energia proveniente da bateria de corrente continua em corrente alternada (CC-CA)."
+    },
+    "alternativa_correta": "E",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 31,
+    "tipo": "objetiva",
+    "topico": "circuitos-eletricos",
+    "alternativas": {
+      "A": "I, II e IV.",
+      "B": "I, III e IV.",
+      "C": "I, III e V.",
+      "D": "II, III e V.",
+      "E": "II, IV e V."
+    },
+    "alternativa_correta": "C",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 32,
+    "tipo": "objetiva",
+    "topico": "capacitancia",
+    "alternativas": {
+      "A": "I e II.",
+      "B": "II e III.",
+      "C": "III e IV.",
+      "D": "I, II e IV.",
+      "E": "I, III e IV."
+    },
+    "alternativa_correta": "A",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2023,
+    "numero": 34,
+    "tipo": "objetiva",
+    "topico": "circuitos-eletricos",
+    "alternativas": {
+      "A": "No ciclo de trabalho do sinal PWM, a corrente e fornecida pela fonte VDC; fora do ciclo, a corrente e fornecida somente pela energia armazenada no capacitor.",
+      "B": "A partir da frequencia de chaveamento e do ciclo de trabalho do PWM, controla-se a amplitude do sinal de saida, mantendo-se a relacao A1 < A2.",
+      "C": "A funcao do conversor buck e converter um sinal continuo da entrada em outro sinal continuo sobre a carga, tal que A1 < A2.",
+      "D": "No ciclo de trabalho do sinal PWM, o diodo conduz corrente mantendo a tensao da fonte de alimentacao estavel com amplitude A1.",
+      "E": "A implementacao da chave e realizada com o emprego de dispositivos semicondutores, como BJT, MOSFET e IGBT."
+    },
+    "alternativa_correta": "E",
+    "link": "https://download.inep.gov.br/enade/provas_e_gabaritos/2023_PV_engenharia_eletrica.pdf"
+  },
+  {
+    "ano": 2019,
+    "numero": 11,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "I, apenas.",
+      "B": "II, apenas.",
+      "C": "I e III, apenas.",
+      "D": "II e III, apenas.",
+      "E": "I, II e III."
+    },
+    "alternativa_correta": "C",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2019/ENGENHARIA_ELETRICA.pdf"
+  },
+  {
+    "ano": 2019,
+    "numero": 15,
+    "tipo": "objetiva",
+    "topico": "circuitos-eletricos",
+    "alternativas": {
+      "A": "I, apenas.",
+      "B": "II, apenas.",
+      "C": "I e III, apenas.",
+      "D": "II e III, apenas.",
+      "E": "I, II e III."
+    },
+    "alternativa_correta": "A",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2019/ENGENHARIA_ELETRICA.pdf"
+  },
+  {
+    "ano": 2019,
+    "numero": 20,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "I e II.",
+      "B": "I e IV.",
+      "C": "II e III.",
+      "D": "I, III e IV.",
+      "E": "II, III e IV."
+    },
+    "alternativa_correta": "E",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2019/ENGENHARIA_ELETRICA.pdf"
+  },
+  {
+    "ano": 2019,
+    "numero": 21,
+    "tipo": "objetiva",
+    "topico": "circuitos-eletricos",
+    "alternativas": {
+      "A": "I, apenas.",
+      "B": "II, apenas.",
+      "C": "I e III, apenas.",
+      "D": "II e III, apenas.",
+      "E": "I, II e III."
+    },
+    "alternativa_correta": "E",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2019/ENGENHARIA_ELETRICA.pdf"
+  },
+  {
+    "ano": 2019,
+    "numero": 24,
+    "tipo": "objetiva",
+    "topico": "circuitos-eletricos",
+    "alternativas": {
+      "A": "I e II.",
+      "B": "I e IV.",
+      "C": "II e III.",
+      "D": "I, III e IV.",
+      "E": "II, III e IV."
+    },
+    "alternativa_correta": "C",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2019/ENGENHARIA_ELETRICA.pdf"
+  },
+  {
+    "ano": 2019,
+    "numero": 27,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "0,05 + j0,10",
+      "B": "0,08 + j0,10",
+      "C": "0,10 + j0,15",
+      "D": "0,12 + j0,18",
+      "E": "0,15 + j0,20"
+    },
+    "alternativa_correta": "E",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2019/ENGENHARIA_ELETRICA.pdf"
+  },
+  {
+    "ano": 2019,
+    "numero": 30,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "IV, apenas.",
+      "B": "I e II, apenas.",
+      "C": "I e III, apenas.",
+      "D": "II, III e IV, apenas.",
+      "E": "I, II, III e IV."
+    },
+    "alternativa_correta": "C",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2019/ENGENHARIA_ELETRICA.pdf"
+  },
+  {
+    "ano": 2019,
+    "numero": 34,
+    "tipo": "objetiva",
+    "topico": "circuitos-eletricos",
+    "alternativas": {
+      "A": "fc = 50 Hz e fa = 50 Hz.",
+      "B": "fc = 50 Hz e fa = 100 Hz.",
+      "C": "fc = 58 Hz e fa = 100 Hz.",
+      "D": "fc = 58 Hz e fa = 116 Hz.",
+      "E": "fc = 62 Hz e fa = 124 Hz."
+    },
+    "alternativa_correta": "B",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2019/ENGENHARIA_ELETRICA.pdf"
+  },
+  {
+    "ano": 2019,
+    "numero": 35,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "As assercoes I e II sao proposicoes verdadeiras, e a II e uma justificativa correta da I.",
+      "B": "As assercoes I e II sao proposicoes verdadeiras, mas a II nao e uma justificativa correta da I.",
+      "C": "A assercao I e uma proposicao verdadeira, e a II e uma proposicao falsa.",
+      "D": "A assercao I e uma proposicao falsa, e a II e uma proposicao verdadeira.",
+      "E": "As assercoes I e II sao proposicoes falsas."
+    },
+    "alternativa_correta": "C",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2019/ENGENHARIA_ELETRICA.pdf"
+  },
+  {
+    "ano": 2017,
+    "numero": 19,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "0,88%.",
+      "B": "0,80%.",
+      "C": "0,48%.",
+      "D": "0,32%.",
+      "E": "0,20%."
+    },
+    "alternativa_correta": "C",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2017/16_ENG_ELE_BACHAREL_BAIXA.pdf"
+  },
+  {
+    "ano": 2017,
+    "numero": 20,
+    "tipo": "objetiva",
+    "topico": "eletromagnetismo",
+    "alternativas": {
+      "A": "I, apenas.",
+      "B": "II, apenas.",
+      "C": "I e III, apenas.",
+      "D": "II e III, apenas.",
+      "E": "I, II e III."
+    },
+    "alternativa_correta": "A",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2017/16_ENG_ELE_BACHAREL_BAIXA.pdf"
+  },
+  {
+    "ano": 2017,
+    "numero": 27,
+    "tipo": "objetiva",
+    "topico": "capacitancia",
+    "alternativas": {
+      "A": "I, apenas.",
+      "B": "III, apenas.",
+      "C": "I e II, apenas.",
+      "D": "II e III, apenas.",
+      "E": "I, II e III."
+    },
+    "alternativa_correta": "D",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2017/16_ENG_ELE_BACHAREL_BAIXA.pdf"
+  },
+  {
+    "ano": 2017,
+    "numero": 31,
+    "tipo": "objetiva",
+    "topico": "pratica",
+    "alternativas": {
+      "A": "I, apenas.",
+      "B": "II, apenas.",
+      "C": "I e III, apenas.",
+      "D": "II e III, apenas.",
+      "E": "I, II e III."
+    },
+    "alternativa_correta": "C",
+    "link": "http://download.inep.gov.br/educacao_superior/enade/provas/2017/16_ENG_ELE_BACHAREL_BAIXA.pdf"
+  }
+]

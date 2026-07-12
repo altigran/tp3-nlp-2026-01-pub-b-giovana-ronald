@@ -1,6 +1,6 @@
 {
   "contract_version": "1.0",
-  "target": ".venv/bin/python -m mcp_content",
+  "target": "python -m mcp_content",
   "summary": {
     "total": 12,
     "passed": 12,
@@ -30,7 +30,7 @@
       "id": "R04",
       "description": "list_topics expõe corpus_hash do corpus congelado",
       "status": "pass",
-      "detail": "corpus_hash=ee839f23dcc3737b…"
+      "detail": "corpus_hash=0814df51b8ccea27…"
     },
     {
       "id": "R05",
@@ -48,7 +48,7 @@
       "id": "R07",
       "description": "get_chunk recupera por id o mesmo chunk, com metadados completos",
       "status": "pass",
-      "detail": "round-trip de eletrostatica_010b3735_4 ok"
+      "detail": "round-trip de capacitancia_e74386f3_0 ok"
     },
     {
       "id": "R08",
