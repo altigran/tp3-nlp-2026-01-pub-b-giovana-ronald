@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-07-12T21:30:43.956045+00:00",
+  "total": 9,
+  "tools": {
+    "list_topics": {
+      "vezes_chamada": 1,
+      "avg_latencia_ms": 0.03,
+      "min_latencia_ms": 0.03,
+      "max_latencia_ms": 0.03,
+      "n_erros": 0,
+      "distribuicao_topicos": {}
+    },
+    "corpus_query": {
+      "vezes_chamada": 8,
+      "avg_latencia_ms": 1231.18,
+      "min_latencia_ms": 26.16,
+      "max_latencia_ms": 9622.0,
+      "n_erros": 6,
+      "distribuicao_topicos": {
+        "eletromagnetismo": 2
+      }
+    }
+  },
+  "latencia_media_ms": 1094.39,
+  "respostas_degradadas": 1
+}

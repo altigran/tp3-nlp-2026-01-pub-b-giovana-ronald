@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-07-12T21:45:30.577084+00:00",
+  "calls": [
+    {
+      "call_id": 1,
+      "tool": "list_topics",
+      "timestamp": "2026-07-12T21:45:30.613281+00:00",
+      "vida_util_ms": 0.01,
+      "erro": false,
+      "topicos": []
+    },
+    {
+      "call_id": 2,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T21:46:20.318652+00:00",
+      "vida_util_ms": 9715.72,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 3,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T21:46:54.512634+00:00",
+      "vida_util_ms": 42.71,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 4,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T21:47:11.057772+00:00",
+      "vida_util_ms": 44.65,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 5,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T21:47:11.086596+00:00",
+      "vida_util_ms": 22.66,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 6,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T21:47:53.652465+00:00",
+      "vida_util_ms": 24.87,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 7,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T21:47:53.678162+00:00",
+      "vida_util_ms": 21.33,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 8,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T21:48:13.357012+00:00",
+      "vida_util_ms": 24.06,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 9,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T21:48:56.722614+00:00",
+      "vida_util_ms": 36.64,
+      "erro": true,
+      "topicos": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-07-12T21:58:57.516249+00:00",
+  "total": 2,
+  "tools": {
+    "list_topics": {
+      "vezes_chamada": 1,
+      "avg_latencia_ms": 0.02,
+      "min_latencia_ms": 0.02,
+      "max_latencia_ms": 0.02,
+      "n_erros": 0,
+      "distribuicao_topicos": {}
+    },
+    "corpus_query": {
+      "vezes_chamada": 1,
+      "avg_latencia_ms": 7583.41,
+      "min_latencia_ms": 7583.41,
+      "max_latencia_ms": 7583.41,
+      "n_erros": 1,
+      "distribuicao_topicos": {}
+    }
+  },
+  "latencia_media_ms": 3791.72,
+  "respostas_degradadas": 1
+}

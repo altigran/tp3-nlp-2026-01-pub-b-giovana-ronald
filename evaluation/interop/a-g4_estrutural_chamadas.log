@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-07-12T21:58:57.516249+00:00",
+  "calls": [
+    {
+      "call_id": 1,
+      "tool": "list_topics",
+      "timestamp": "2026-07-12T21:58:57.547695+00:00",
+      "vida_util_ms": 0.02,
+      "erro": false,
+      "topicos": []
+    },
+    {
+      "call_id": 2,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-12T21:59:14.126063+00:00",
+      "vida_util_ms": 7583.41,
+      "erro": true,
+      "topicos": []
+    }
+  ]
+}
