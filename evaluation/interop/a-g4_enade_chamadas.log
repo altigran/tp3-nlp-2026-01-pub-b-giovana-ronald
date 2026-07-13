@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-07-13T03:29:22.970523+00:00",
+  "calls": [
+    {
+      "call_id": 1,
+      "tool": "list_topics",
+      "timestamp": "2026-07-13T03:29:23.006873+00:00",
+      "vida_util_ms": 0.02,
+      "erro": false,
+      "topicos": []
+    },
+    {
+      "call_id": 2,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T03:29:38.826775+00:00",
+      "vida_util_ms": 9761.11,
+      "erro": false,
+      "topicos": [
+        "capacitancia",
+        "eletrostatica",
+        "circuitos-eletricos"
+      ]
+    }
+  ]
+}

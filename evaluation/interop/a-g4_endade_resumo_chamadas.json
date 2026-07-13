@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-07-13T03:29:22.970523+00:00",
+  "total": 2,
+  "tools": {
+    "list_topics": {
+      "vezes_chamada": 1,
+      "avg_latencia_ms": 0.02,
+      "min_latencia_ms": 0.02,
+      "max_latencia_ms": 0.02,
+      "n_erros": 0,
+      "distribuicao_topicos": {}
+    },
+    "corpus_query": {
+      "vezes_chamada": 1,
+      "avg_latencia_ms": 9761.11,
+      "min_latencia_ms": 9761.11,
+      "max_latencia_ms": 9761.11,
+      "n_erros": 0,
+      "distribuicao_topicos": {
+        "capacitancia": 1,
+        "eletrostatica": 1,
+        "circuitos-eletricos": 1
+      }
+    }
+  },
+  "latencia_media_ms": 4880.57,
+  "respostas_degradadas": 1
+}

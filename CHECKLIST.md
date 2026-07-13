@@ -32,8 +32,8 @@ relatório). O preenchimento é usado como guia na correção (Seção 6.7).
 ## Fase 2 — interoperabilidade
 - [x] Servidor disponibilizado aos **2 tutores** sorteados; suas suítes aplicadas — _onde:_ arquivos em evaluation/interlop/
 - [x] Logs de chamadas, latência por tool, distribuição de queries por tópico, falhas — _onde:_ arquivo mcp_content/server.py
-- [ ] Relatório de interoperabilidade → `evaluation/interop/` — _onde:_
-- [ ] Análise de erros (3–5 casos) no relatório — _onde:_
+- [x] Relatório de interoperabilidade → `evaluation/interop/` — _onde:_ arquivo evaluation/interop/relatorio_interop.md
+- [x] Análise de erros (3–5 casos) no relatório — _onde:_ seção do relatório "Análise de erros".
 
 ## Reprodutibilidade (Seção 7)
 - [x] Seeds fixas (amostragem de busca, shuffling) — _onde:_ arquivo build/planner.py

@@ -1,0 +1,232 @@
+{
+  "timestamp": "2026-07-13T02:48:01.215906+00:00",
+  "calls": [
+    {
+      "call_id": 1,
+      "tool": "list_topics",
+      "timestamp": "2026-07-13T02:48:01.289938+00:00",
+      "vida_util_ms": 0.01,
+      "erro": false,
+      "topicos": []
+    },
+    {
+      "call_id": 2,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:48:21.242131+00:00",
+      "vida_util_ms": 10193.37,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 3,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:48:50.912820+00:00",
+      "vida_util_ms": 103.22,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 4,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:49:19.169036+00:00",
+      "vida_util_ms": 95.34,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 5,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:49:35.935794+00:00",
+      "vida_util_ms": 88.21,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 6,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:49:49.178967+00:00",
+      "vida_util_ms": 51.0,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 7,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:50:24.016591+00:00",
+      "vida_util_ms": 55.43,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 8,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:50:54.866928+00:00",
+      "vida_util_ms": 74.3,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 9,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:51:07.958236+00:00",
+      "vida_util_ms": 63.25,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 10,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:51:33.008226+00:00",
+      "vida_util_ms": 67.49,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 11,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:51:40.031436+00:00",
+      "vida_util_ms": 49.5,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 12,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:51:52.998811+00:00",
+      "vida_util_ms": 73.51,
+      "erro": false,
+      "topicos": [
+        "circuitos-eletricos",
+        "eletrostatica",
+        "capacitancia"
+      ]
+    },
+    {
+      "call_id": 13,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:52:50.097479+00:00",
+      "vida_util_ms": 68.55,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 14,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:52:55.944515+00:00",
+      "vida_util_ms": 48.45,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 15,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:53:30.955329+00:00",
+      "vida_util_ms": 53.26,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 16,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:53:37.700206+00:00",
+      "vida_util_ms": 50.72,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 17,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:54:04.432254+00:00",
+      "vida_util_ms": 78.73,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 18,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:54:16.076124+00:00",
+      "vida_util_ms": 58.99,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 19,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:54:27.944059+00:00",
+      "vida_util_ms": 65.29,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 20,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:54:38.119035+00:00",
+      "vida_util_ms": 55.38,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 21,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:54:43.866012+00:00",
+      "vida_util_ms": 57.75,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 22,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:54:49.614011+00:00",
+      "vida_util_ms": 70.17,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 23,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:54:54.827198+00:00",
+      "vida_util_ms": 57.97,
+      "erro": false,
+      "topicos": [
+        "eletrostatica",
+        "capacitancia"
+      ]
+    },
+    {
+      "call_id": 24,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:55:50.083796+00:00",
+      "vida_util_ms": 66.97,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 25,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:55:56.679179+00:00",
+      "vida_util_ms": 56.85,
+      "erro": true,
+      "topicos": []
+    },
+    {
+      "call_id": 26,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:56:14.392630+00:00",
+      "vida_util_ms": 66.49,
+      "erro": false,
+      "topicos": [
+        "capacitancia",
+        "eletrostatica",
+        "circuitos-eletricos"
+      ]
+    },
+    {
+      "call_id": 27,
+      "tool": "corpus_query",
+      "timestamp": "2026-07-13T02:56:40.825815+00:00",
+      "vida_util_ms": 66.69,
+      "erro": true,
+      "topicos": []
+    }
+  ]
+}

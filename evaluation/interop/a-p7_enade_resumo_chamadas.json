@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-07-13T03:00:59.869338+00:00",
+  "total": 26,
+  "tools": {
+    "list_topics": {
+      "vezes_chamada": 1,
+      "avg_latencia_ms": 0.02,
+      "min_latencia_ms": 0.02,
+      "max_latencia_ms": 0.02,
+      "n_erros": 0,
+      "distribuicao_topicos": {}
+    },
+    "corpus_query": {
+      "vezes_chamada": 25,
+      "avg_latencia_ms": 464.16,
+      "min_latencia_ms": 47.77,
+      "max_latencia_ms": 10044.14,
+      "n_erros": 22,
+      "distribuicao_topicos": {
+        "capacitancia": 3,
+        "circuitos-eletricos": 2,
+        "eletrostatica": 2,
+        "eletromagnetismo": 1
+      }
+    }
+  },
+  "latencia_media_ms": 446.31,
+  "respostas_degradadas": 1
+}
